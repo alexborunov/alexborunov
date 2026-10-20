@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Built from cases/_template.html. Sources for every figure are listed at the bottom of the page. -->
+
+<title>How does a free medical service pay for itself? · Alex Borunov</title>
+<meta name="description" content="Prosto Sprosit: free written answers from oncologists for cancer patients, funded by donations instead of fees.">
+<meta property="og:title" content="How does a free medical service pay for itself? · Alex Borunov">
+<meta property="og:description" content="Free written answers from oncologists, funded by donations instead of fees.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alexborunov.com/cases/prosto-sprosit.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/prosto-sprosit.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How does a free medical service pay for itself?">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/avatar-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sitebar">
+  <nav class="sitenav" aria-label="Main">
+    <a class="brand plate" href="../index.html"><img class="ava" src="../assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="../index.html">Home</a>
+      <a href="../cases.html" aria-current="page">Cases</a>
+      <a href="../proof.html">Proof</a>
+      <a href="../alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="../Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <header class="case-hero">
+    <div class="read">
+      <span class="kicker"><span class="dot"></span> 0 to 1 · Healthcare</span>
+      <h1>How does a free medical service pay for itself?</h1>
+      <p class="dek">A cancer nonprofit kept getting letters from patients it could not help. We turned them into Prosto Sprosit ("Just Ask"): free written answers from oncologists, funded by donations.</p>
+      <div class="case-meta">
+        <span>Cancer Prevention Foundation</span>
+        <span>·</span>
+        <span>2019 to 2020</span>
+        <span>·</span>
+        <span data-reading-time></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="case-layout">
+    <div class="read">
+
+      <div class="factbox">
+        <dl>
+          <div><dt>My role</dt><dd>Head of the project. The medicine was the doctors' job, not mine.</dd></div>
+          <div><dt>Team</dt><dd>A coordinator, outsourced developers, oncologists paid per answer</dd></div>
+          <div><dt>Timeframe</dt><dd>Launched February 2019</dd></div>
+          <div><dt>Still running</dt><dd><a href="https://nenaprasno.ru/ask/" target="_blank" rel="noopener">nenaprasno.ru/ask</a> <span class="lang">RU</span></dd></div>
+          <div><dt>The constraint</dt><dd>Every answer cost a doctor's fee. Patients paid nothing.</dd></div>
+        </dl>
+      </div>
+
+      <div class="tldr">
+        <h2>If you only read one thing</h2>
+        <p>A cancer nonprofit got letters from patients every day and helped as best it could, but with no process the help rarely went far. We turned that demand into an MVP: free written answers from oncologists, paid for by donors, not patients. <strong>Donations covered the cost of running the service from the first month: product-market fit at the MVP stage.</strong> A year later it drew about 1,100 donations a month.</p>
+      </div>
+
+      <article class="prose">
+
+        <h2 id="situation" data-short="The situation">The situation</h2>
+
+        <p>In 2019 I worked at a cancer prevention nonprofit in St Petersburg. It ran prevention and education: an online risk test used by hundreds of thousands of people, training for young oncologists, a health media site. It did not help individual patients.</p>
+        <p>Patients wrote in anyway, every day, about 1,500 a year, asking what to do after a diagnosis. We tried to help: whoever had a minute replied, me included. But nothing was formalised, every reply was improvised, and it rarely got the person much further. It also took a lot of the team's time.</p>
+
+        <h2 id="fork" data-short="The fork">The fork</h2>
+
+        <div class="fork">
+          <div class="fork-options">
+            <div class="opt">
+              <span class="opt-label">Option A</span>
+              <h4>Keep answering ad hoc</h4>
+              <p>Individual help was outside the mission. Safe, and the cost stayed invisible: staff hours, and answers that rarely helped.</p>
+            </div>
+            <div class="opt" data-chosen>
+              <span class="opt-label">Option B · chosen</span>
+              <h4>Turn it into a service</h4>
+              <p>A standard intake and a real answer from an oncologist. The smallest working version first.</p>
+            </div>
+          </div>
+          <div class="fork-verdict">
+            <p>We were already paying for this demand in staff time, and the help it bought was thin. A service would cost money, but it would turn that time into answers. It also raised the next question: who pays for each doctor's answer.</p>
+          </div>
+        </div>
+
+        <h2 id="shipped" data-short="What shipped">What shipped</h2>
+
+        <figure class="shot">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;background:#fff;padding:18px 14px 14px">
+            <div style="text-align:center"><img width="352" height="384" src="../assets/img/prosto-sprosit/illus-form.png" alt="Illustration: a hand ticking boxes in a checklist on a tablet." loading="lazy" style="width:100%;height:auto"><div style="font-size:13.5px;line-height:1.35;color:var(--ink-3);margin-top:4px">Fill in the form</div></div>
+            <div style="text-align:center"><img width="352" height="384" src="../assets/img/prosto-sprosit/illus-doctor.png" alt="Illustration: a doctor in a white coat working at a laptop." loading="lazy" style="width:100%;height:auto"><div style="font-size:13.5px;line-height:1.35;color:var(--ink-3);margin-top:4px">An oncologist studies the case</div></div>
+            <div style="text-align:center"><img width="352" height="384" src="../assets/img/prosto-sprosit/illus-answer.png" alt="Illustration: a woman reading a reply on her phone, with a speech bubble." loading="lazy" style="width:100%;height:auto"><div style="font-size:13.5px;line-height:1.35;color:var(--ink-3);margin-top:4px">Get a written answer</div></div>
+          </div>
+          <figcaption>How the service explained itself to patients.</figcaption>
+        </figure>
+
+        <h3>A form that asks the question for the patient</h3>
+
+        <p>This is the part I am proudest of. Before designing it I interviewed doctors and read patient forums. People rarely ask questions. They describe their situation and expect the doctor to work out what they need, and the usual reply to a story like that is sympathy, not an answer.</p>
+        <p>So the form does the asking. A few gate fields, then the topic, then a checklist of the questions doctors most often need to answer. Each request arrived as a ready case: no case manager had to rework it, and the doctor knew exactly what to answer.</p>
+
+        <div class="figrow top">
+          <figure class="shot">
+            <img width="797" height="572" src="../assets/img/prosto-sprosit/form-gate.png" alt="Form step: is there a cancer diagnosis established by a doctor, living in Russia, region, age, sex." loading="lazy">
+            <figcaption>Gate first: diagnosis, region, age.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img width="797" height="472" src="../assets/img/prosto-sprosit/form-topic.png" alt="Form step: topic of the consultation, who it is for, and whether it comes through an employer programme." loading="lazy">
+            <figcaption>Topic and "for whom" route the case to the right specialist.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="shot">
+          <img width="793" height="706" src="../assets/img/prosto-sprosit/form-questions.png" alt="Checklist 'Questions for the expert': where to go, what tests to take, how often, what to do if the diagnosis is confirmed, whether genetic testing is needed." loading="lazy">
+          <figcaption>The patient ticks questions instead of writing a story.</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img width="803" height="392" src="../assets/img/prosto-sprosit/answer-redacted.png" alt="A doctor's written answer under the heading 'What should be done in the near future?'. Most of the text is blurred; the visible lines name the specialist to see and where to find one." loading="lazy">
+          <figcaption>One answer per ticked question: which specialist, and where. Patient details blurred.</figcaption>
+        </figure>
+
+        <h3>Who pays</h3>
+
+        <p>Not the patient. A price at the worst moment of someone's life would have made the foundation one more paid clinic. The bet was recognition: most people have seen cancer up close and know the helplessness of not knowing what to do. A donor looking at this service sees their own worst month. Capacity was whatever donors funded: money for 200 consultations meant 200 answers.</p>
+
+        <figure class="shot">
+          <img width="1360" height="668" src="../assets/img/prosto-sprosit/landing-crop.jpg" alt="Prosto Sprosit landing page with two buttons, 'Start a consultation' and 'Help the project', and the line 'The service is free. It runs on charitable donations.'" loading="lazy">
+          <figcaption>The donation button sits next to the consultation button on the first screen.</figcaption>
+        </figure>
+
+        <h2 id="results" data-short="What happened">What happened</h2>
+
+        <div class="grid-cells">
+          <div class="cell"><b>2 days</b><span>to take the first 300 funded consultations</span></div>
+          <div class="cell"><b>~30 / day</b><span>requests after that</span></div>
+          <div class="cell"><b>~1,100</b><span>donations a month, a year in</span></div>
+          <div class="cell"><b>14,000+</b><span>consultations delivered</span></div>
+        </div>
+
+        <blockquote>
+          <p>"The first 300 consultation opportunities paid off by donations were all snapped up in a couple of days."</p>
+          <cite>Me, as head of the project · ITMO.News, 11 February 2019</cite>
+        </blockquote>
+
+        <p>A year later the service drew about 1,100 donations a month, around $5 each. Recurring giving and donor lifetime value grew with it, from zero.</p>
+
+        <figure class="shot photo">
+          <img width="1280" height="960" src="../assets/img/prosto-sprosit/digital-health-awards-2019.jpg" alt="Alex holding the Digital Health Awards 2019 diploma: Grand Prix, Social Initiative of the Year, second place, awarded to the Prosto Sprosit reference service." loading="lazy">
+          <figcaption>Digital Health Awards 2019: second place in the Grand Prix category "Social Initiative of the Year".</figcaption>
+        </figure>
+
+        <figure class="chart-fig">
+          <div class="chart">
+            <div class="chart-head">
+              <p class="chart-title">Donations to Prosto Sprosit, a year after launch
+                <span class="chart-sub">number of payments per month · January to May 2020</span></p>
+            </div>
+            <div class="plot" style="--max:1500">
+              <div class="gl" style="bottom:0"><span>0</span></div>
+              <div class="gl" style="bottom:33.333%"><span>500</span></div>
+              <div class="gl" style="bottom:66.667%"><span>1,000</span></div>
+              <div class="gl" style="bottom:100%"><span>1,500</span></div>
+              <div class="groups">
+                <div class="grp"><div class="bar" style="--v:1222" tabindex="0" data-tip-value="1,222 donations" data-tip-label="January 2020 · $5.9K in total"></div></div>
+                <div class="grp"><div class="bar" style="--v:1142" tabindex="0" data-tip-value="1,142 donations" data-tip-label="February 2020 · $5.4K in total"></div></div>
+                <div class="grp"><div class="bar" style="--v:1170" tabindex="0" data-tip-value="1,170 donations" data-tip-label="March 2020 · $6.1K in total"></div></div>
+                <div class="grp"><div class="bar" style="--v:1073" tabindex="0" data-tip-value="1,073 donations" data-tip-label="April 2020 · $5.2K in total"></div></div>
+                <div class="grp"><div class="bar" style="--v:1036" tabindex="0" data-tip-value="1,036 donations" data-tip-label="May 2020 · $4.9K in total"></div></div>
+              </div>
+            </div>
+            <div class="xlab"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span></div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption>Same data as a table</caption>
+              <thead>
+                <tr><th>2020</th><th>Donations</th><th>Total, $K</th><th>Average, $</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>January</td><td>1,222</td><td>5.9</td><td>4.82</td></tr>
+                <tr><td>February</td><td>1,142</td><td>5.4</td><td>4.69</td></tr>
+                <tr><td>March</td><td>1,170</td><td>6.1</td><td>5.24</td></tr>
+                <tr><td>April</td><td>1,073</td><td>5.2</td><td>4.86</td></tr>
+                <tr><td>May</td><td>1,036</td><td>4.9</td><td>4.76</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>Total</td><td>5,643</td><td>27.5</td><td>4.87</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <figcaption>About 1,100 small gifts a month, every month. Source: the foundation's monthly financial reports.</figcaption>
+        </figure>
+
+        <p>The 2019 reports show one income figure for the whole foundation, so the first year and the recurring growth are my account, not a published number. For January to May 2020 the reports do split it out: $27.5K in donations to the service against $22.0K in running costs. In March 2020 the same team built a COVID-19 helpline in a week and a half, on live chats rather than this form: <a href="defeatcovid.html">the next case</a>.</p>
+
+        <h3>What we changed after launch</h3>
+        <p>The first version told patients two things: "request received" and "answer ready", with a promise of about three days. Doctors worked part time and some cases came with hundreds of pages of records, so the promise was not always kept, and patient satisfaction sat around 7–8 out of 10.</p>
+        <p>I first tried to make doctors faster: a case manager, redistributing cases. It barely moved. Then I changed what the patient was told instead: which doctor had taken the case, a notice when it was running late, what to expect and when. Response time stayed roughly the same; satisfaction rose to about 9.5 out of 10. Those answers also fed the patient stories the foundation used in its fundraising.</p>
+
+        <div class="cost">
+          <h3>What it cost</h3>
+          <p>Building and developing the site cost about $40K over 2019, and every answer was a doctor's fee. In the first week we made the form stricter: prevention questions were reaching paid doctors and producing the least useful answers. Requests from people without a diagnosis were declined, with a pointer to the risk test and the media site.</p>
+        </div>
+
+        <figure class="shot">
+          <img width="812" height="548" src="../assets/img/prosto-sprosit/declined.png" alt="'Your request was declined': the service answers only people with cancer, and suggests the SCREEN risk test and the Profilaktika.Media site instead." loading="lazy">
+          <figcaption>The refusal still hands the person on: to the risk test and the media site.</figcaption>
+        </figure>
+
+        <h2 id="hindsight" data-short="Hindsight">What I would do differently</h2>
+
+        <p>Tag every donation by project and recurring status from day one. Recurring giving grew on the back of this service, but the 2019 reports show one total for the whole foundation, so I cannot put a number on the strongest part of this story.</p>
+
+        <h2 id="sources" data-short="Sources">Sources</h2>
+
+        <ul class="sources">
+          <li><a href="https://news.itmo.ru/en/news/8238/" target="_blank" rel="noopener">ITMO.News, 11 February 2019</a>: launch, about 1,500 questions a year before it, the first 300 consultations, 30 requests a day, "200 consultations for 200 people".</li>
+          <li><a href="https://nenaprasno.ru/ask/" target="_blank" rel="noopener">Prosto Sprosit, service page</a> <span class="lang">RU</span>: the service's own counter of closed requests, past 20,000 by October 2026.</li>
+          <li>Monthly financial reports of the foundation (nenaprasno.ru/reports): project costs, February to December 2019; donations by project, January to May 2020.</li>
+          <li><a href="https://trends.rbc.ru/trends/innovation/5e8355089a7947630ce2d632" target="_blank" rel="noopener">RBC Trends, 2 April 2020</a> <span class="lang">RU</span>: the COVID-19 version, built in a week and a half; first days' volume.</li>
+          <li><a href="https://nuzhnapomosh.ru/media/post/myslit-ne-s-tochki-zreniya-vyzhivaniya-a-s-tochki-zreniya-razvitiya-kolonka-fonda-ne-naprasno/" target="_blank" rel="noopener">Nuzhna Pomosh, foundation column</a> <span class="lang">RU</span>: about 2,000 COVID-19 requests by January 2021.</li>
+        </ul>
+        <p class="fx-note" style="font-size:13.5px;color:var(--ink-3);margin-top:18px">All money on this page is in US dollars, converted from roubles at fixed rates: 61.8 ₽ per dollar for 2020 (Bank of Russia average for January 2020) and 64.7 ₽ for the 2019 development cost (2019 average).</p>
+
+      </article>
+
+      <div class="takeaway">
+        <h2>The takeaway</h2>
+        <p>Demand you handle informally is demand you already pay for. Count what that costs before calling it out of scope.</p>
+      </div>
+
+      <div class="pill-row" style="margin-top:28px">
+        <button class="copybtn">Copy link to this case</button>
+        <a class="pill" href="../cases.html">All cases</a>
+        <a class="pill" href="../proof.html">Press &amp; papers</a>
+      </div>
+
+      <nav class="case-nav">
+        <a href="higher-school-of-oncology.html">
+          <span class="dir">Previous</span>
+          <span class="ttl">What can a $3,000 sponsorship do in oncology?</span>
+        </a>
+        <a class="next" href="defeatcovid.html">
+          <span class="dir">Next</span>
+          <span class="ttl">Why would a cancer charity take on COVID-19?</span>
+        </a>
+      </nav>
+
+    </div><!-- /.read -->
+
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol><!-- built by site.js from .prose h2[id] --></ol>
+    </aside>
+  </div><!-- /.case-layout -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <span>Alex Borunov</span>
+    <span class="sep">·</span>
+    <a href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

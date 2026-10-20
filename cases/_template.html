@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==========================================================================
+     CASE PAGE TEMPLATE
+     Copy this file, rename it, fill in every {{PLACEHOLDER}}.
+     Delete the .todo-block boxes as you replace them.
+
+     Rules that keep this from turning back into a CV:
+       1. The <h1> is a QUESTION or a CLAIM. Never an achievement.
+          Bad:  "8x revenue growth at Genomed"
+          Good: "What do you fix first when the website is not the channel?"
+       2. Write prose. If a paragraph starts with a past-tense verb
+          ("Led...", "Built...", "Designed..."), it is a CV bullet. Rewrite it.
+       3. Section 3 (The fork) is mandatory. If there was no real decision
+          with a real alternative, this case does not deserve a page.
+       4. Section 5 must admit something. A case with no cost and no
+          hindsight reads as marketing.
+     ========================================================================== -->
+
+<title>{{CASE TITLE}} · Alex Borunov</title>
+<meta name="description" content="{{ONE SENTENCE, 140 CHARS MAX}}">
+<meta property="og:title" content="{{CASE TITLE}} · Alex Borunov">
+<meta property="og:description" content="{{ONE SENTENCE}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alexborunov.com/cases/{{SLUG}}.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/{{SLUG}}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{CASE TITLE}}">
+<meta name="twitter:card" content="summary_large_image">
+<!-- og card: regenerate assets/og/{{SLUG}}.png from the case row on index.html (generator: scripts/og_build.py) -->
+<link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/avatar-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sitebar">
+  <nav class="sitenav" aria-label="Main">
+    <a class="brand plate" href="../index.html"><img class="ava" src="../assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="../index.html">Home</a>
+      <a href="../cases.html" aria-current="page">Cases</a>
+      <a href="../proof.html">Proof</a>
+      <a href="../alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="../Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ====================================================================
+       1. HERO — the question, not the achievement
+       ==================================================================== -->
+  <header class="case-hero">
+    <div class="read">
+      <span class="kicker"><span class="dot"></span> {{DOMAIN TAG}}</span>
+      <h1>{{THE QUESTION THIS CASE ANSWERS}}</h1>
+      <p class="dek">{{ONE SENTENCE THAT GIVES AWAY THE ANSWER. The reader
+      should be able to stop here and still have learned something.}}</p>
+      <div class="case-meta">
+        <span>{{COMPANY}}</span>
+        <span>·</span>
+        <span>{{YEARS}}</span>
+        <span>·</span>
+        <span data-reading-time></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="case-layout">
+    <div class="read">
+
+      <!-- ==================================================================
+           2. FACT BOX — everything a skimmer needs in five seconds
+           ================================================================== -->
+      <div class="factbox">
+        <dl>
+          <div><dt>My role</dt><dd>{{TITLE, AND WHAT YOU ACTUALLY OWNED}}</dd></div>
+          <div><dt>Team</dt><dd>{{E.G. 7 PEOPLE, CROSS-FUNCTIONAL}}</dd></div>
+          <div><dt>Timeframe</dt><dd>{{E.G. 18 MONTHS}}</dd></div>
+          <div><dt>The constraint</dt><dd>{{THE THING THAT MADE IT HARD. Budget,
+          headcount, regulation, legacy stack, a stakeholder.}}</dd></div>
+        </dl>
+      </div>
+
+      <!-- TL;DR — write this LAST, after the body exists -->
+      <div class="tldr">
+        <h2>If you only read one thing</h2>
+        <p>{{THE WHOLE CASE IN TWO SENTENCES. Include the number, but lead
+        with the decision, not the number.}}</p>
+      </div>
+
+      <article class="prose">
+
+        <!-- ================================================================
+             3. THE SITUATION — what was broken and what it cost
+             ================================================================ -->
+        <h2 id="situation" data-short="The situation">The situation</h2>
+
+        <div class="todo-block">
+          <b>What goes here</b>
+          Describe the state of the world before you touched it, in prose.
+          Anchor it with one number that shows why it mattered commercially.
+          Do not describe your job. Describe the problem as the business felt it.
+          Two to four paragraphs.
+        </div>
+
+        <p>{{PARAGRAPH}}</p>
+        <p>{{PARAGRAPH}}</p>
+
+        <figure>
+          <div class="artifact-slot"><p>Artifact slot. Replace this div with an <code>&lt;img&gt;</code>. See README for the snippet.</p></div>
+          <figcaption>{{WHAT THE READER SHOULD NOTICE IN THIS IMAGE. Never
+          "screenshot of the dashboard". Point at the thing.}}</figcaption>
+        </figure>
+
+        <!-- ================================================================
+             4. THE FORK — the block a CV structurally cannot contain
+             ================================================================ -->
+        <h2 id="fork" data-short="The fork">The fork</h2>
+
+        <div class="todo-block">
+          <b>What goes here — this is the section that matters</b>
+          A real decision point with at least two defensible options.
+          Say what each option would have cost and what it would have bought.
+          Then say what you chose and on what evidence. If you chose on
+          instinct with no evidence, say that too: it is more credible than
+          inventing a framework after the fact.
+        </div>
+
+        <p>{{SET UP THE DECISION IN ONE PARAGRAPH.}}</p>
+
+        <div class="fork">
+          <div class="fork-options">
+            <div class="opt">
+              <span class="opt-label">Option A</span>
+              <h4>{{THE OBVIOUS MOVE}}</h4>
+              <p>{{WHY IT WAS TEMPTING AND WHAT IT WOULD HAVE COST.}}</p>
+            </div>
+            <div class="opt" data-chosen>
+              <span class="opt-label">Option B · chosen</span>
+              <h4>{{WHAT YOU ACTUALLY DID}}</h4>
+              <p>{{WHY.}}</p>
+            </div>
+            <!-- add a third .opt if there was one -->
+          </div>
+          <div class="fork-verdict">
+            <p>{{THE REASONING. What evidence tipped it? Who disagreed?}}</p>
+            <p>{{WHAT YOU WOULD HAVE NEEDED TO SEE TO PICK THE OTHER ONE.}}</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             5. WHAT SHIPPED
+             ================================================================ -->
+        <h2 id="shipped" data-short="What shipped">What shipped</h2>
+
+        <div class="todo-block">
+          <b>What goes here</b>
+          The concrete thing. Mechanism, not adjectives: how it worked, what
+          the user saw, what the system did. This is where artifacts earn
+          their place. Aim for at least one real image or diagram.
+        </div>
+
+        <p>{{PARAGRAPH}}</p>
+
+        <div class="figrow">
+          <figure>
+            <div class="artifact-slot">Before</div>
+            <figcaption>{{BEFORE: what the user had to do.}}</figcaption>
+          </figure>
+          <figure>
+            <div class="artifact-slot">After</div>
+            <figcaption>{{AFTER: what changed for them.}}</figcaption>
+          </figure>
+        </div>
+
+        <!-- ================================================================
+             6. WHAT HAPPENED — including what did not move
+             ================================================================ -->
+        <h2 id="results" data-short="What happened">What happened</h2>
+
+        <div class="grid-cells">
+          <div class="cell"><b>{{NUMBER}}</b><span>{{WHAT IT MEASURES}}</span></div>
+          <div class="cell"><b>{{NUMBER}}</b><span>{{WHAT IT MEASURES}}</span></div>
+          <div class="cell"><b>{{NUMBER}}</b><span>{{WHAT IT MEASURES}}</span></div>
+        </div>
+
+        <p>{{PUT THE NUMBERS IN CONTEXT. Over what period? Compared to what
+        baseline? What else was happening that could explain them?}}</p>
+
+        <div class="cost">
+          <h3>What it cost</h3>
+          <p>{{EVERY REAL DECISION HAS A BILL. Cannibalized channel, tech debt,
+          a team that burned out, a segment you deprioritised, a metric that
+          got worse. Name it. This paragraph buys you more credibility than
+          any number above it.}}</p>
+        </div>
+
+        <!-- ================================================================
+             7. WHAT I'D DO DIFFERENTLY
+             ================================================================ -->
+        <h2 id="hindsight" data-short="Hindsight">What I would do differently</h2>
+
+        <div class="todo-block">
+          <b>What goes here</b>
+          One or two things, specific and technical. Not "I would communicate
+          more". Something like "I would have instrumented the funnel before
+          touching it, because I still cannot separate the checkout win from
+          the SEO win."
+        </div>
+
+        <p>{{PARAGRAPH}}</p>
+
+      </article>
+
+      <!-- ==================================================================
+           8. TAKEAWAY — the line a reader can steal
+           ================================================================== -->
+      <div class="takeaway">
+        <h2>The takeaway</h2>
+        <p>{{ONE TRANSFERABLE IDEA, STATED SO IT WOULD BE USEFUL TO SOMEONE
+        WHO WILL NEVER WORK IN YOUR INDUSTRY.}}</p>
+      </div>
+
+      <div class="pill-row" style="margin-top:28px">
+        <button class="copybtn">Copy link to this case</button>
+        <a class="pill" href="../cases.html">All cases</a>
+      </div>
+
+      <!-- prev / next -->
+      <nav class="case-nav">
+        <a href="{{PREV FILE}}">
+          <span class="dir">Previous</span>
+          <span class="ttl">{{PREV TITLE}}</span>
+        </a>
+        <a class="next" href="{{NEXT FILE}}">
+          <span class="dir">Next</span>
+          <span class="ttl">{{NEXT TITLE}}</span>
+        </a>
+      </nav>
+
+    </div><!-- /.read -->
+
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol><!-- built by site.js from .prose h2[id] --></ol>
+    </aside>
+  </div><!-- /.case-layout -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <span>Alex Borunov</span>
+    <span class="sep">·</span>
+    <a href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

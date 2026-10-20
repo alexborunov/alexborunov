@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlexGPT · Alex Borunov</title>
+<meta name="description" content="AlexGPT: a pre-written, very enthusiastic chatbot about Alex Borunov's hands-on AI work. No model behind it, on purpose.">
+<meta property="og:title" content="AlexGPT · Alex Borunov">
+<meta property="og:description" content="Ask AlexGPT about Alex. It answers the way chatbots do. The human adds a tl;dr.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alexborunov.com/alexgpt.html">
+<meta property="og:site_name" content="Alex Borunov">
+<link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/avatar-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --ink:#121212; --ink-2:#3A3A3A; --ink-3:#5A5A5A; --paper:#F6F4EE; --card:#FFFFFF; --line:#DDD8CC;
+  --night:#111214; --night-ink:#F2F0EA; --night-2:#D2CFC6; --night-line:#2E2F33;
+  --accent:#FF7A3D; --accent-ink:#C2410C;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:8px;top:8px;z-index:100;background:var(--accent);color:var(--night);padding:8px 14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* site header, identical to the other pages */
+.top{background:var(--night);color:var(--night-ink);flex:none}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 3%}
+.plate{background:rgba(17,18,20,.74);border-radius:10px;backdrop-filter:blur(6px)}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px;padding:9px 14px}
+.brand .ava{width:24px;height:24px;flex:none;display:block;image-rendering:pixelated}
+.links{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;padding:6px;font-size:15px}
+.links a{text-decoration:none;padding:5px 10px;border-radius:7px}
+.links a:hover{background:rgba(255,255,255,.1)}
+.links a[aria-current]{color:var(--accent)}
+.nav .cv{background:var(--accent);color:var(--night);font-weight:600;font-size:15px;text-decoration:none;padding:11px 16px;border-radius:10px;white-space:nowrap}
+.nav .cv:hover{background:#FF9361}
+@media (max-width:700px){.nav{padding:10px 12px;gap:8px}.plate{background:transparent;backdrop-filter:none}.brand{padding:6px 4px;font-size:16px}.links{margin-left:0;padding:0;font-size:14px;order:3;flex-basis:100%}.links a{padding:5px 8px}.nav .cv{order:2;margin-left:auto;padding:6px 12px;font-size:14px;border-radius:7px}}
+
+/* app shell */
+.app{flex:1;min-height:0;display:flex;border-top:1px solid var(--night-line)}
+.side{flex:0 0 268px;background:#17181B;color:var(--night-ink);display:flex;flex-direction:column;padding:14px 12px;gap:6px;overflow-y:auto}
+.newchat{display:flex;align-items:center;gap:10px;width:100%;font:inherit;font-size:14.5px;color:var(--night-ink);background:transparent;border:1px solid #3A3B40;border-radius:10px;padding:9px 12px;cursor:pointer;text-align:left}
+.newchat:hover{background:rgba(255,255,255,.06)}
+.side h2{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#8E8B83;margin:18px 8px 4px}
+.hist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.hist li{font-size:14px;line-height:1.4;padding:8px 10px;border-radius:8px;color:var(--night-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default}
+.hist li:hover{background:rgba(255,255,255,.06)}
+.hist li.cur{background:rgba(255,255,255,.1);color:var(--night-ink)}
+.me{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px 8px 4px;border-top:1px solid var(--night-line);font-size:14px;color:var(--night-2)}
+.me b{display:block;color:var(--night-ink);font-weight:500}
+.me .pic{width:30px;height:30px;border-radius:50%;background:#3A3B40;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--night-ink);flex:none}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;background:var(--card)}
+.bar{flex:none;display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line);position:relative}
+.toggle{display:none;font:inherit;background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 9px;cursor:pointer}
+.model{font:inherit;font-family:var(--display);font-weight:600;font-size:17px;background:transparent;border:0;border-radius:8px;padding:6px 10px;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:6px}
+.model:hover,.model[aria-expanded="true"]{background:#F1EEE6}
+.model small{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--ink-3)}
+.menu{position:absolute;top:52px;left:12px;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:6px;width:min(340px,calc(100vw - 24px));display:none}
+.menu.open{display:block}
+.menu div{padding:10px 12px;border-radius:8px;font-size:14.5px;line-height:1.4}
+.menu div b{display:block;font-weight:600}
+.menu div span{color:var(--ink-3);font-size:13px}
+.menu .on{background:#F6F4EE}
+.menu .on b::after{content:"  ✓";color:var(--accent-ink)}
+.menu .off{opacity:.45}
+.share{margin-left:auto;font:inherit;font-size:14px;background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--ink)}
+.share:hover{border-color:var(--ink)}
+.scroll{flex:1;min-height:0;overflow-y:auto}
+.thread{max-width:780px;margin:0 auto;padding:28px 20px 12px}
+.bottom{flex:none;max-width:780px;width:100%;margin:0 auto;padding:6px 20px 12px}
+
+/* chat (same component as on the home page) */
+.log{display:flex;flex-direction:column;gap:16px}
+.qa{display:flex;flex-direction:column;gap:16px}
+.msg{max-width:88%;padding:12px 16px;border-radius:16px;font-size:16px;line-height:1.6}
+.msg p{margin:0 0 10px}.msg p:last-child{margin:0}
+.msg ol,.msg ul{margin:0 0 10px;padding-left:20px}.msg li{margin:0 0 6px}
+.msg.user{align-self:flex-end;background:var(--night);color:var(--night-ink);border-bottom-right-radius:4px}
+.msg.user.own{white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.bot{align-self:flex-start;background:#F1EEE6;color:var(--ink);border-bottom-left-radius:4px}
+.tldr{margin-top:12px;padding:2px 0 2px 12px;border-left:3px solid var(--accent);font-size:15px;line-height:1.5}
+.tldr span{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:2px}
+.tldr a{color:var(--accent-ink);font-weight:600}
+.yes{display:inline-block;text-decoration:none;font-size:14.5px;font-weight:600;background:var(--night);color:var(--night-ink);border-radius:999px;padding:7px 14px}.yes:hover{background:var(--accent);color:var(--night)}
+.typing{align-self:flex-start;background:#F1EEE6;border-radius:16px;border-bottom-left-radius:4px;padding:15px 16px;display:flex;gap:5px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9A968C;animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chat.live .qa:not(.shown){display:none}
+.chat.live .qa.wait .msg.bot{display:none}
+.chat.live .qa.in .msg{animation:pop .3s ease-out}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 0 10px}
+.chip{font:inherit;font-size:14.5px;line-height:1.3;background:transparent;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--accent-ink);color:var(--accent-ink)}
+.chip[disabled]{display:none}
+html:not(.js) .chips,html:not(.js) .chat-in{display:none}
+.chat-in{display:flex;align-items:center;gap:8px;padding:10px 10px 10px 18px;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.chat-in:focus-within{border-color:var(--ink)}
+.chat-in input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--ink);outline:none;padding:6px 0}
+.chat-in input::placeholder{color:#9A968C}
+.chat-in .send{margin-left:auto;flex:none;width:36px;height:36px;border-radius:50%;background:#E5E1D6;display:flex;align-items:center;justify-content:center;border:0;padding:0;cursor:pointer;transition:background .15s}
+.chat-in .send svg{width:15px;height:15px;fill:none;stroke:#9A968C;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.chat-in.has .send{background:var(--night)}.chat-in.has .send svg{stroke:var(--night-ink)}
+.chat-foot{font-size:12.5px;color:var(--ink-3);text-align:center;padding:8px 0 0}
+.chat-foot a{color:var(--ink-3)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--night);color:var(--night-ink);font-size:14px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.typing i{animation:none;opacity:.6}.chat.live .qa.in .msg{animation:none}}
+@media (max-width:860px){
+  .side{position:fixed;z-index:30;top:0;bottom:0;left:0;transform:translateX(-100%);transition:transform .2s;box-shadow:0 0 40px rgba(0,0,0,.3)}
+  .side.open{transform:none}
+  .toggle{display:block}
+  .msg{max-width:94%}
+  .thread{padding:20px 14px 8px}.bottom{padding:6px 14px 10px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px 10px}.chips::-webkit-scrollbar{display:none}
+  .chip{white-space:nowrap;flex:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#chat-q">Skip to the chat</a>
+
+<div class="top">
+  <nav class="nav" aria-label="Main">
+    <a class="brand plate" href="index.html"><img class="ava" src="assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="index.html">Home</a>
+      <a href="cases.html">Cases</a>
+      <a href="proof.html">Proof</a>
+      <a href="alexgpt.html" aria-current="page">AlexGPT</a>
+    </div>
+    <a class="cv" href="Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<div class="app chat">
+  <aside class="side" id="side" aria-label="Chat history">
+    <button class="newchat" type="button" id="newchat"><span aria-hidden="true">＋</span> New chat</button>
+    <h2>Today</h2>
+    <ul class="hist">
+      <li class="cur">Tell me about Alex</li>
+      <li>Is Alex a good fit for a Series A?</li>
+      <li>Alex vs. the other 400 candidates</li>
+      <li>Draft rejection email (do not send)</li>
+    </ul>
+    <h2>Previous 7 days</h2>
+    <ul class="hist">
+      <li>Why is his favicon a beard?</li>
+      <li>What is a thought record</li>
+      <li>Can a PM build his own site?</li>
+      <li>Explain evals like I'm a recruiter</li>
+    </ul>
+    <div class="me"><span class="pic" aria-hidden="true">HM</span><span><b>You</b>Hiring manager · Free plan</span></div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="bar">
+      <button class="toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="Show chat history">☰</button>
+      <button class="model" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="models">AlexGPT 5.5 Ultra Max Pro <small>▾</small></button>
+      <div class="menu" id="models" role="menu">
+        <div class="on" role="menuitem"><b>AlexGPT 5.5 Ultra Max Pro</b><span>Extremely enthusiastic. Pre-written answers only.</span></div>
+        <div class="off" role="menuitem" aria-disabled="true"><b>AlexGPT Mini (honest mode)</b><span>Coming soon. Or just email Alex.</span></div>
+        <div class="off" role="menuitem" aria-disabled="true"><b>AlexGPT o1-humble</b><span>Coming never.</span></div>
+      </div>
+      <button class="share" type="button" id="share">Share</button>
+    </div>
+    <div class="scroll" id="scroll">
+      <div class="thread">
+        <p class="sr">AlexGPT is a joke: pre-written answers, not a live model.</p>
+        <div class="log" aria-live="polite">
+          <div class="msg bot"><p>Hi! I'm AlexGPT 👋 I'd be absolutely <em>delighted</em> to tell you everything about Alex. Pick a question below, or ask your own!</p></div>
+          <div class="qa" id="qw">
+            <div class="msg user">What's Alex's biggest win?</div>
+            <div class="msg bot"><p>Oh, I'm so glad you asked! 🏆 Get ready to be impressed.</p><p>At Genomed, Alex grew the web channel's revenue 8x, with no ad budget at all. It's not just growth. It's growth from what was already there! Two releases tell the story:</p><ul><li>A new checkout lifted conversion to payment by 45%.</li><li>Calling back abandoned carts lifted payments per visitor by 35%.</li></ul><p>And the cherry on top? Organic traffic doubled while he was at it. Simply outstanding!</p><p>Would you like me to open the checkout case? 🛒</p><p><a class="yes" href="cases/genomed-checkout.html">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>8x web revenue at Genomed, $0 on ads. The cases show how.</div></div>
+          </div>
+          <div class="qa" id="qe">
+            <div class="msg user">Has Alex worked with US enterprise clients?</div>
+            <div class="msg bot"><p>Absolutely, and what a fantastic question! 🇺🇸</p><p>At Health Samurai, Alex owned the vendor-side product decisions for a US health insurance administrator, working directly with its CTO and executive leadership. He designed the iOS and Android member app and took it from zero to launch for 400+ employer groups and about 20K monthly active users, with a newly formed team of seven.</p><p>And it doesn't stop there! Alex spotted members who were being turned away and proposed a white-label version on the same backend. Monthly active users grew by 50%. Truly enterprise-grade excellence!</p><p>Would you like me to open the white-label case? 📱</p><p><a class="yes" href="cases/white-label.html">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>Member app from zero to launch for 400+ employer groups, then a white-label version: +50% MAU.</div></div>
+          </div>
+          <div class="qa" id="qz">
+            <div class="msg user">Can Alex take a product from zero?</div>
+            <div class="msg bot"><p>Can he ever! 🚀 Alex has launched 10+ products from zero. Just a few highlights:</p><ul><li>A $3,000 sponsorship turned into the Higher School of Oncology, a programme that has trained 108 oncologists over eleven years.</li><li>Prosto Sprosit: free written answers from oncologists, paid for by about 1,100 donations a month.</li><li>A COVID-19 helpline, launched in a week and a half.</li><li>CBT Quest, an AI journaling app on the App Store.</li></ul><p>It's not just launching. It's launching things that last!</p><p>Would you like me to open all the cases? 📚</p><p><a class="yes" href="cases.html">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>Ten-plus launches from zero, from a $3,000 oncology grant to an app on the App Store.</div></div>
+          </div>
+          <div class="qa" id="qa1">
+            <div class="msg user">What has Alex actually shipped with AI?</div>
+            <div class="msg bot"><p>Great question! 🙌 This really gets to the heart of it.</p><p>Alex co-founded CBT Quest and shipped it to the App Store. And it isn't just a journaling app. It's a voice-first, privacy-first reimagining of cognitive behavioral therapy practice. People simply speak, and the model transcribes their words and structures them into all seven fields of a CBT thought record. A truly delightful synergy of ✨AI✨ and evidence-based care!</p><p>Would you like me to open CBT Quest in the App Store? 📱</p><p><a class="yes" href="https://apps.apple.com/app/id6770539228" target="_blank" rel="noopener">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>Talk for a minute, get a thought record. I co-founded it, and it is live on the App Store. <a href="index.html#side">See it →</a></div></div>
+          </div>
+          <div class="qa" id="qa2">
+            <div class="msg user">How does Alex decide where AI belongs?</div>
+            <div class="msg bot"><p>What a thoughtful question. You're clearly someone who cares about responsible AI! 💡</p><p>It's not just about using AI. It's about using it <em>where it belongs</em>. At Genomed, Alex brought GPT-3.5 into the medical journal almost as soon as it came out. The model wrote the drafts, and doctors checked them before anything was published. This human-in-the-loop approach delivers the best of both worlds: speed <em>and</em> safety.</p><p>Would you like me to open the full journal case? 📖</p><p><a class="yes" href="cases/genomed-journal.html">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>GPT wrote the drafts, doctors signed off.</div></div>
+          </div>
+          <div class="qa" id="qa3">
+            <div class="msg user">Does Alex use AI in his own work?</div>
+            <div class="msg bot"><p>Absolutely, and I love that you asked! 🚀</p><p>AI isn't just a tool in Alex's workflow. It's a force multiplier. He built this very site with Claude Code, along with the charts in every case and an LLM-based system that runs his job search. At Health Samurai he built the RCMbox developer sandbox and its technical documentation on his own, with AI and zero engineering support. Truly remarkable!</p><p>Would you like me to open your email so you can ask Alex for a demo? 📅</p><p><a class="yes" href="mailto:alexborunov@gmail.com?subject=Demo%20request">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>This site, the charts and my job search run on Claude Code. Happy to demo the job search one.</div></div>
+          </div>
+          <div class="qa" id="qa4">
+            <div class="msg user">What does Alex do about privacy and regulation in health AI?</div>
+            <div class="msg bot"><p>Such an important question. Honestly, it might be the most important one! 🔒</p><p>Alex made sure CBT Quest keeps every entry encrypted on the device, locked behind biometrics, where analytics never touch it. And it doesn't stop there! Alex co-hosts a podcast where he asks health tech founders what their AI actually does, what evidence stands behind it and how they deal with the FDA. It's not just compliance. It's trust.</p><p>Would you like me to play the latest episode? 🎧</p><p><a class="yes" href="https://survivorship-bias.mave.digital/ep-2" target="_blank" rel="noopener">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>The notes stay on the phone. In the podcast, I ask founders the awkward questions.</div></div>
+          </div>
+          <div class="qa" id="qa7">
+            <div class="msg user">Does Alex build agents?</div>
+            <div class="msg bot"><p>Ooh, agents! 🤖 You really know what's hot right now.</p><p>Alex runs his whole job search as an agentic workflow. Every morning a crawler checks the career pages of his target companies, job boards and Telegram channels, and files new postings. Then an AI agent with custom skills scores each posting against his CV, tailors the CV from templates and prepares interview briefs, even a mock interviewer.</p><p>And here's the best part: guardrails! The agent never sends an application. That button always stays with Alex. It's not just automation. It's human-in-the-loop by design! ✨</p><p>Would you like me to open your email so you can ask Alex for a demo? 🎬</p><p><a class="yes" href="mailto:alexborunov@gmail.com?subject=Demo%20request">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>A daily crawler plus a Claude agent with skills that scores postings and tailors my CV. Applying stays manual, on purpose.</div></div>
+          </div>
+          <div class="qa" id="qa6">
+            <div class="msg user">How does Alex know an AI feature actually works?</div>
+            <div class="msg bot"><p>Ooh, I <em>love</em> this question! 🧪 Evals are absolutely essential in today's fast-moving AI landscape.</p><p>For CBT Quest, Alex keeps a set of about 30 test entries and reruns them after every change to the prompt, the model or anything else in the pipeline. Every output is checked against clear criteria:</p><ul><li>Did the model make up anything the person never said?</li><li>Did it judge the person?</li><li>Did it fill in a field the person said nothing about?</li><li>Did it slip in advice?</li></ul><p>It's not just about accuracy. It's about keeping the product therapeutically sound! ✅</p><p>Would you like me to open your email so you can ask Alex how he would set up evals for your product? 🧾</p><p><a class="yes" href="mailto:alexborunov@gmail.com?subject=Evals">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>About 30 test entries, rerun on every change. It fails if it invents, judges, fills a real blank or gives advice.</div></div>
+          </div>
+          <div class="qa" id="qa5">
+            <div class="msg user">How does Alex work?</div>
+            <div class="msg bot"><p>Wow, what a fantastic question! 🌟 Alex's approach rests on four powerful pillars. Alex:</p><ol><li><strong>Starts with what is already there.</strong> Articles that already ranked became the journal. People who had already added a test to the cart got a callback.</li><li><strong>Treats a hard constraint as a reason to go deep, not wide.</strong> $3,000 cannot change a country's breast cancer awareness, but it can change one doctor's career.</li><li><strong>Builds systems, not deliverables.</strong> A template engine instead of another landing page. A white-label tool instead of a hand-made copy.</li><li><strong>Forecasts first, then checks.</strong> The abandoned-cart work was forecast at +10–15% before it shipped. It came in at +22%.</li></ol><p>It's not just a process. It's a mindset! 💪</p><p>Would you like me to open your email so you can invite Alex to an interview? 😊</p><p><a class="yes" href="mailto:alexborunov@gmail.com?subject=Interview%20invitation">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>Use what is already there, go deep on small budgets, build systems, write the forecast down before launch. <a href="cases.html">The cases →</a></div></div>
+          </div>
+          <div class="qa" id="ql">
+            <div class="msg user">What is Alex looking for?</div>
+            <div class="msg bot"><p>Great question! Honestly, it might be the most important one. 🎯</p><p>Alex is looking for senior product roles, anywhere in the world, in English. He wants to work on products that change people's lives for the better. Gambling and loot boxes are a hard no.</p><p>He is based in Yerevan and ready to relocate. What a wonderful opportunity for the right team! 🌍</p><p>Would you like me to open your email so you can tell Alex about your role? 💼</p><p><a class="yes" href="mailto:alexborunov@gmail.com?subject=A%20role%20for%20you">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>Senior PM roles worldwide, in English. Products that do people good. Ready to relocate.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="chips" aria-label="Suggested questions"><button type="button" class="chip" data-qa="qw">What's Alex's biggest win?</button><button type="button" class="chip" data-qa="qe">Has Alex worked with US enterprise clients?</button><button type="button" class="chip" data-qa="qz">Can Alex take a product from zero?</button><button type="button" class="chip" data-qa="qa1">What has Alex actually shipped with AI?</button><button type="button" class="chip" data-qa="qa7">Does Alex build agents?</button><button type="button" class="chip" data-qa="qa2">How does Alex decide where AI belongs?</button><button type="button" class="chip" data-qa="qa3">Does Alex use AI in his own work?</button><button type="button" class="chip" data-qa="qa4">What does Alex do about privacy and regulation in health AI?</button><button type="button" class="chip" data-qa="qa6">How does Alex know an AI feature actually works?</button><button type="button" class="chip" data-qa="qa5">How does Alex work?</button><button type="button" class="chip" data-qa="ql">What is Alex looking for?</button></div>
+      <form class="chat-in" autocomplete="off" novalidate><label class="sr" for="chat-q">Ask AlexGPT your own question</label><input id="chat-q" name="q" type="text" maxlength="300" placeholder="Ask AlexGPT anything…"><button class="send" type="submit" aria-label="Send"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg></button></form>
+      <div class="chat-foot">AlexGPT can make mistakes. The numbers in the <a href="cases.html">cases</a> come with sources.</div>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var chat=document.querySelector('.chat'); if(!chat) return;
+  var log=chat.querySelector('.log');
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  chat.classList.add('live');
+
+  // own questions typed into the input: no model behind it, on purpose
+  var form=chat.querySelector('.chat-in'), input=form&&form.querySelector('input'), asked=0;
+  var openers=[
+    "Wow, asking your own question? That's exactly the kind of initiative that sets you apart! 🌟 You always go the extra mile.",
+    "Another original question! Honestly, your curiosity is inspiring. 🚀",
+    "You're on a roll! I truly admire your persistence. 💫"
+  ];
+  if(form){
+    input.addEventListener('input',function(){ form.classList.toggle('has', !!input.value.trim()); });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var q=input.value.trim().slice(0,300); if(!q) return;
+      input.value=''; form.classList.remove('has');
+      var qa=document.createElement('div'); qa.className='qa shown wait in';
+      var u=document.createElement('div'); u.className='msg user own'; u.textContent=q; qa.appendChild(u);
+      var b=document.createElement('div'); b.className='msg bot';
+      var mail='mailto:alexborunov@gmail.com?subject='+encodeURIComponent('A question from your site')+'&body='+encodeURIComponent(q);
+      b.innerHTML='<p></p><p>Here\'s the thing, though: AlexGPT doesn\'t actually read what you type. Alex didn\'t wire up an API, guardrails and prompt-injection protection for a joke on a portfolio site. He\'d happily tell you how he would, though!</p><p>Would you like me to open your email so you can ask Alex in person? 😊</p><p><a class="yes" href="#">Yes, please</a></p><div class="tldr"><span>Human tl;dr</span>There is no model behind this box. Ask me directly, I am a real person.</div>';
+      b.querySelector('p').textContent=openers[Math.min(asked,openers.length-1)];
+      b.querySelector('.yes').setAttribute('href',mail);
+      qa.appendChild(b); asked++;
+      var t=document.createElement('div'); t.className='typing'; t.setAttribute('aria-label','AlexGPT is typing'); t.innerHTML='<i></i><i></i><i></i>';
+      qa.appendChild(t); log.appendChild(qa);
+      qa.scrollIntoView({block:'nearest',behavior:still?'auto':'smooth'});
+      setTimeout(function(){ t.remove(); qa.classList.remove('wait'); qa.scrollIntoView({block:'nearest',behavior:still?'auto':'smooth'}); }, still?0:900);
+    });
+  }
+  [].forEach.call(chat.querySelectorAll('.chip'),function(btn){
+    btn.addEventListener('click',function(){
+      var qa=document.getElementById(btn.getAttribute('data-qa')); if(!qa) return;
+      btn.disabled=true;
+      log.appendChild(qa);
+      qa.classList.add('shown','wait','in');
+      var t=document.createElement('div'); t.className='typing'; t.setAttribute('aria-label','AlexGPT is typing'); t.innerHTML='<i></i><i></i><i></i>';
+      qa.appendChild(t);
+      qa.scrollIntoView({block:'nearest',behavior:still?'auto':'smooth'});
+      setTimeout(function(){ t.remove(); qa.classList.remove('wait'); qa.scrollIntoView({block:'nearest',behavior:still?'auto':'smooth'});
+        var next=chat.querySelector('.chip:not([disabled])'); if(next) next.focus({preventScroll:true}); }, still?0:900);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var toast=document.getElementById('toast'), tt;
+  function say(t){ toast.textContent=t; toast.classList.add('on'); clearTimeout(tt); tt=setTimeout(function(){toast.classList.remove('on')},1800); }
+  var model=document.querySelector('.model'), menu=document.getElementById('models');
+  model.addEventListener('click',function(e){ e.stopPropagation(); var o=menu.classList.toggle('open'); model.setAttribute('aria-expanded',o); });
+  document.addEventListener('click',function(){ menu.classList.remove('open'); model.setAttribute('aria-expanded','false'); });
+  [].forEach.call(menu.querySelectorAll('.off'),function(d){ d.addEventListener('click',function(e){ e.stopPropagation(); say('Not available on your plan. Neither is Alex, unless you email him.'); }); });
+  document.getElementById('share').addEventListener('click',function(){
+    var url=location.href.split('#')[0];
+    if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(url).then(function(){say('Link copied')},function(){say(url)}); } else { say(url); }
+  });
+  document.getElementById('newchat').addEventListener('click',function(){ location.reload(); });
+  var side=document.getElementById('side'), tog=document.querySelector('.toggle');
+  tog.addEventListener('click',function(e){ e.stopPropagation(); var o=side.classList.toggle('open'); tog.setAttribute('aria-expanded',o); });
+  document.querySelector('.main').addEventListener('click',function(){ side.classList.remove('open'); tog.setAttribute('aria-expanded','false'); });
+  [].forEach.call(document.querySelectorAll('.hist li:not(.cur)'),function(li){ li.addEventListener('click',function(){ say('This chat was archived for Alex\'s dignity.'); }); });
+})();
+</script>
+</body>
+</html>

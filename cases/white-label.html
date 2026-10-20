@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Built from cases/_template.html. Sources for every figure are listed at the bottom of the page. -->
+
+<title>How did one database flag become a second product? · Alex Borunov</title>
+<meta name="description" content="A rebranded copy of a health insurance member app on the same backend: two months to ship, +50% monthly active users.">
+<meta property="og:title" content="How did one database flag become a second product? · Alex Borunov">
+<meta property="og:description" content="Members were turned away from an app that already worked for them. A white-label tool let them in.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alexborunov.com/cases/white-label.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/white-label.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How did one database flag become a second product?">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/avatar-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sitebar">
+  <nav class="sitenav" aria-label="Main">
+    <a class="brand plate" href="../index.html"><img class="ava" src="../assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="../index.html">Home</a>
+      <a href="../cases.html" aria-current="page">Cases</a>
+      <a href="../proof.html">Proof</a>
+      <a href="../alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="../Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <header class="case-hero">
+    <div class="read">
+      <span class="kicker"><span class="dot"></span> B2B2C · White label</span>
+      <h1>How did one database flag become a second product?</h1>
+      <p class="dek">Members of a reseller's employer groups could not use an app that already worked for them, because the company selling them the service could not show whose app it was. A rebranded copy on the same backend took two months, and monthly active users grew by half.</p>
+      <div class="case-meta">
+        <span>Health Samurai, for a US health insurance administrator</span>
+        <span>·</span>
+        <span>2026</span>
+        <span>·</span>
+        <span data-reading-time></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="case-layout">
+    <div class="read">
+
+      <div class="factbox">
+        <dl>
+          <div><dt>My role</dt><dd>Spotted the opportunity and proposed it. Wrote the requirements and the login and matching logic together with the tech lead, and made the product calls along the way.</dd></div>
+          <div><dt>Team</dt><dd>The same team of seven that built the main member app</dd></div>
+          <div><dt>Timeframe</dt><dd>Two months from proposal to the stores</dd></div>
+          <div><dt>The constraint</dt><dd>The reseller's clients could never learn whose service they were really using.</dd></div>
+        </dl>
+      </div>
+
+      <div class="tldr">
+        <h2>If you only read one thing</h2>
+        <p>A reseller sold our client's services under its own brand, so its employer groups were not allowed to download our client's app, even though they sat in the same database. We had to turn them away at login. I proposed a rebranded copy of the app on the same backend. <strong>It shipped in two months, the reseller paid for it, and monthly active users grew by about 50%.</strong></p>
+      </div>
+
+      <article class="prose">
+
+        <h2 id="situation" data-short="The situation">The situation</h2>
+
+        <p>Our client administered health plans for employers in the US, and we built its member app: claims, coverage, ID cards, finding a doctor in the network. More than 400 employer groups used it.</p>
+        <p>Part of the client's business came through a reseller, which sold the same services to its own employer groups under its own name. Those members were in the same database and had the same benefits. The only difference was one attribute on the group. But the reseller's clients could not know who was behind the service, so they could not be sent to an app with our client's name on it.</p>
+        <p>So the app turned them away. Even when a member from a reseller group entered correct details, we deliberately did not match them to their record. Everything they needed was already built, and we were blocking it.</p>
+
+        <h2 id="fork" data-short="The fork">The fork</h2>
+
+        <p>The idea itself was simple: if the backend already works for these members, give them the same app under the reseller's brand. The real decision came next: how to build it.</p>
+
+        <div class="fork">
+          <div class="fork-options">
+            <div class="opt">
+              <span class="opt-label">Option A</span>
+              <h4>Hardcode one copy</h4>
+              <p>Fork the app, swap the logo and colours by hand, ship it. Fastest for this one reseller, and every future one would mean doing it all again.</p>
+            </div>
+            <div class="opt" data-chosen>
+              <span class="opt-label">Option B · chosen</span>
+              <h4>Build a white-label tool</h4>
+              <p>One codebase that can produce a branded app from configuration, so the next reseller is a setup job, not a project.</p>
+            </div>
+          </div>
+          <div class="fork-verdict">
+            <p>This reseller was not a one-off: selling under someone else's brand is common in this market. We gave up some customisation to get there: a brand gets what the tool supports, not anything it asks for.</p>
+          </div>
+        </div>
+
+        <h2 id="shipped" data-short="What shipped">What shipped</h2>
+
+        <p>From the outside it looks like one feature flag. In practice it was a list of decisions, and agreeing them with everyone involved was harder than building them.</p>
+
+        <figure>
+          <svg viewBox="0 0 640 230" role="img" aria-label="One backend serves two branded apps; at login the backend checks which app the request came from and the member's group, and allows or refuses the match." style="width:100%;height:auto;font:14px/1.3 inherit">
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="20" y="30" width="170" height="60" rx="10"/>
+              <rect x="20" y="140" width="170" height="60" rx="10"/>
+              <rect x="250" y="70" width="150" height="90" rx="10"/>
+              <rect x="460" y="85" width="160" height="60" rx="10"/>
+              <path d="M190 60 L250 100 M190 170 L250 130 M400 115 L460 115"/>
+            </g>
+            <g fill="currentColor" text-anchor="middle">
+              <text x="105" y="57">Client's app</text>
+              <text x="105" y="76" font-size="12" opacity=".7">client's groups</text>
+              <text x="105" y="167">Reseller's app</text>
+              <text x="105" y="186" font-size="12" opacity=".7">reseller's groups</text>
+              <text x="325" y="105">Login check</text>
+              <text x="325" y="124" font-size="12" opacity=".7">which app?</text>
+              <text x="325" y="141" font-size="12" opacity=".7">which group?</text>
+              <text x="540" y="112">Same backend</text>
+              <text x="540" y="131" font-size="12" opacity=".7">one database</text>
+            </g>
+          </svg>
+          <figcaption>Two apps, one backend, one login check.</figcaption>
+        </figure>
+
+        <p><b>Who gets in where.</b> One login flow for both apps. The backend recognises which app a request comes from and allows or refuses the match depending on the member's group. A member of a reseller group gets nothing from the client's app, and the other way round.</p>
+        <p><b>People move.</b> Members change jobs, leave a group and join another one with the same email. Each of these moves had to land the person in the right app without losing their account. These edge cases took more time than the rebranding itself.</p>
+        <p><b>What a brand can change.</b> I defined what the tool configures and what stays fixed, so a new brand never means new code.</p>
+        <p><b>Where it is published.</b> We prepared the options; the client chose to publish both apps from its own store accounts.</p>
+
+        <h2 id="results" data-short="What happened">What happened</h2>
+
+        <div class="grid-cells">
+          <div class="cell"><b>2 months</b><span>from proposal to the stores</span></div>
+          <div class="cell"><b>+50%</b><span>monthly active users, soon after launch</span></div>
+          <div class="cell"><b>1</b><span>backend for both apps</span></div>
+        </div>
+
+        <p>The reseller liked it, the client liked it, and the reseller paid for the development. Members who had been turned away at login could finally use what had been built for them all along.</p>
+
+        <div class="cost">
+          <h3>What it cost</h3>
+          <p>Customisation. Choosing a tool over a hand-made copy means a brand can only change what the tool exposes. For this reseller that was enough. A partner who wants their own features or flows would need a different conversation.</p>
+        </div>
+
+      </article>
+
+      <div class="takeaway">
+        <h2>The takeaway</h2>
+        <p>Before building something new, look at who you are turning away. Sometimes the product already exists and the only thing missing is permission to give it to them.</p>
+      </div>
+
+      <div class="pill-row" style="margin-top:28px">
+        <button class="copybtn">Copy link to this case</button>
+        <a class="pill" href="../cases.html">All cases</a>
+        <a class="pill" href="../proof.html">Press &amp; papers</a>
+      </div>
+
+      <nav class="case-nav">
+        <a href="../cases.html">
+          <span class="dir">Back</span>
+          <span class="ttl">All cases</span>
+        </a>
+        <a class="next" href="genomed-checkout.html">
+          <span class="dir">Next</span>
+          <span class="ttl">Why split a checkout into more steps?</span>
+        </a>
+      </nav>
+
+    </div><!-- /.read -->
+
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol><!-- built by site.js from .prose h2[id] --></ol>
+    </aside>
+  </div><!-- /.case-layout -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <span>Alex Borunov</span>
+    <span class="sep">·</span>
+    <a href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof · Alex Borunov</title>
+<meta name="description" content="Products Alex Borunov built from nothing, measured by others: a peer-reviewed study in JCO Global Oncology, ASCO 2025, RBC, Digital Health Awards, Wikipedia, the US State Department's IVLP.">
+<meta property="og:title" content="Proof · Alex Borunov">
+<meta property="og:description" content="Built from nothing. Measured by people who owe me nothing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alexborunov.com/proof.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/proof.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Proof · Alex Borunov">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/avatar-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121212; --ink-2:#3A3A3A; --ink-3:#5A5A5A; --paper:#F6F4EE; --card:#FFFFFF; --line:#DDD8CC;
+  --night:#111214; --night-ink:#F2F0EA; --night-2:#D2CFC6; --night-line:#2E2F33; --night-3:#A8A59C;
+  --accent:#FF7A3D; --accent-ink:#C2410C;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 18px}}
+.skip{position:absolute;left:-9999px}.skip:focus{left:8px;top:8px;z-index:100;background:var(--accent);color:var(--night);padding:8px 14px}
+
+/* nav */
+.top{background:var(--night);color:var(--night-ink)}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:12px;height:12px;background:var(--accent);display:inline-block}
+.links{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;font-size:15px}
+.links a{text-decoration:none;padding:5px 10px;border-radius:7px}
+.links a:hover{background:rgba(255,255,255,.1)}
+.links a[aria-current]{color:var(--accent)}
+.nav .cv{background:var(--accent);color:var(--night);font-weight:600;font-size:15px;text-decoration:none;padding:9px 14px;border-radius:9px;white-space:nowrap}
+.nav .cv:hover{background:#FF9361}
+@media (max-width:700px){.links{margin-left:0;font-size:14px;order:3;flex-basis:100%}.links a{padding:5px 8px}.nav .cv{order:2;margin-left:auto;padding:6px 12px;font-size:14px}}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.kick{font-family:var(--mono);font-size:14px;color:var(--accent)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,5.6vw,76px);line-height:1;letter-spacing:-.035em;margin:14px 0 22px;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:var(--night-2);max-width:62ch;margin:0}
+
+/* receipt wall */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--night-line);border:1px solid var(--night-line);border-radius:14px;overflow:hidden;margin-top:44px}
+.tile{background:var(--night);padding:22px 20px 20px;display:flex;flex-direction:column;gap:8px;text-decoration:none;min-height:150px;transition:background .15s}
+.tile:hover{background:#1A1B1E}
+.tile .who{font-family:var(--mono);font-size:12.5px;color:var(--night-3);text-transform:uppercase;letter-spacing:.06em}
+.tile b{font-family:var(--display);font-weight:700;font-size:clamp(24px,2.2vw,32px);line-height:1.08;letter-spacing:-.02em;color:var(--night-ink)}
+.tile b.acc{color:var(--accent)}
+.tile span.d{font-size:14.5px;line-height:1.45;color:var(--night-2);margin-top:auto}
+@media (max-width:960px){.wall{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.wall{grid-template-columns:1fr}.tile{min-height:0}}
+
+/* sections */
+section{padding:64px 0 8px}
+h2{font-family:var(--display);font-size:clamp(30px,3.4vw,40px);letter-spacing:-.02em;margin:0 0 6px;line-height:1.1}
+.sub{font-family:var(--mono);font-size:13.5px;color:var(--ink-3);margin:0 0 26px}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:16px 20px;font-size:15.5px;color:var(--ink-2);margin:0 0 24px;max-width:860px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px}
+@media (max-width:420px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.card .src{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink);text-transform:uppercase;letter-spacing:.06em}
+.card h3{font-family:var(--display);font-size:21px;line-height:1.25;margin:0;letter-spacing:-.01em}
+.card p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.card .cite{font-size:13.5px;color:var(--ink-3)}
+.card .cite a{color:var(--ink-2)}
+.nums{display:flex;flex-wrap:wrap;gap:10px 28px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums div{display:flex;flex-direction:column}
+.nums b{font-family:var(--mono);font-weight:500;font-size:24px;color:var(--accent-ink);line-height:1.2}
+.nums span{font-size:13px;color:var(--ink-3)}
+.card .go{margin-top:auto;font-family:var(--mono);font-size:13.5px;color:var(--accent-ink);text-decoration:none}
+.card .go:hover{text-decoration:underline}
+.card.wide{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:24px}
+.card.wide .txt{flex:1 1 360px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card.wide img{flex:0 1 380px;border-radius:10px;object-fit:cover;min-width:0}
+.card.wide .pics{flex:0 1 540px;display:grid;grid-template-columns:3fr 4fr;gap:10px;min-width:0}
+.card.wide .pics img{width:100%;height:auto;border-radius:10px;flex:none}
+.card.wide .pics{align-self:flex-start}
+.lang{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 4px;color:var(--ink-3);vertical-align:2px}
+
+/* footer */
+.foot{margin-top:80px;background:var(--night);color:var(--night-ink)}
+.foot .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.foot .big{font-family:var(--display);font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.02em;flex:999 1 420px;line-height:1.1}
+.foot .small{flex-basis:100%;font-family:var(--mono);font-size:13px;color:var(--night-3);display:flex;gap:16px;flex-wrap:wrap}
+.foot .small a{text-decoration:none}.foot .small a:hover{color:var(--night-ink)}
+.btn{text-decoration:none;padding:12px 18px;border-radius:8px;font-weight:600;white-space:nowrap;background:var(--accent);color:var(--night)}
+.btn:hover{background:#FF9361}
+.top>.nav{padding:22px 3%}
+/* header identical to the home page */
+.plate{background:rgba(17,18,20,.74);border-radius:10px;backdrop-filter:blur(6px)}
+.nav .brand{padding:9px 14px}
+.nav .links{padding:6px}
+.nav .cv{padding:11px 16px;border-radius:10px}
+@media (max-width:700px){.top>.nav{padding:10px 12px;gap:8px}.plate{background:transparent;backdrop-filter:none}.nav .brand{padding:6px 4px;font-size:16px}.nav .links{padding:0}.nav .cv{padding:6px 12px;border-radius:7px}}
+.brand .ava{width:24px;height:24px;flex:none;display:block;image-rendering:pixelated}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="top">
+  <nav class="nav" aria-label="Main">
+    <a class="brand plate" href="index.html"><img class="ava" src="assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="index.html">Home</a>
+      <a href="cases.html">Cases</a>
+      <a href="proof.html" aria-current="page">Proof</a>
+      <a href="alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+  <div class="wrap">
+
+    <header class="hero" id="main">
+      <div class="kick">&gt; proof · what others wrote, measured and awarded</div>
+      <h1>Built from nothing. Checked by people who <em>owe me nothing.</em></h1>
+      <p class="lede">I started at a cancer charity in St Petersburg with no budget and a team you could count on one hand. What I built there ended up in an oncology journal, at ASCO, in the national business press, in Wikipedia and on an awards stage. None of it is written by me. That is the point of this page.</p>
+
+      <div class="wall">
+        <a class="tile" href="#papers"><span class="who">Peer-reviewed</span><b class="acc">JCO Global Oncology</b><span class="d">A study of the programme I came up with, 2021</span></a>
+        <a class="tile" href="#papers"><span class="who">Conference</span><b>ASCO 2025</b><span class="d">The same programme, ten years on</span></a>
+        <a class="tile" href="cases/higher-school-of-oncology.html"><span class="who">Outcome</span><b class="acc">108 oncologists</b><span class="d">trained so far, about one in a hundred in Russia</span></a>
+        <a class="tile" href="cases/higher-school-of-oncology.html"><span class="who">Outcome</span><b>2 × Forbes 30 Under 30</b><span class="d">among the programme's graduates</span></a>
+        <a class="tile" href="#press"><span class="who">National press</span><b>RBC</b><span class="d">on a COVID-19 helpline launched in a week and a half</span></a>
+        <a class="tile" href="#award"><span class="who">Award</span><b class="acc">Digital Health Awards</b><span class="d">2019, Social Initiative of the Year, second place</span></a>
+        <a class="tile" href="#reference"><span class="who">Encyclopedia</span><b>Wikipedia</b><span class="d">two products I built are described in it</span></a>
+        <a class="tile" href="#recognition"><span class="who">U.S. State Department</span><b>IVLP 2019</b><span class="d">International Visitor Leadership Program</span></a>
+      </div>
+    </header>
+  </div>
+</div>
+
+<main>
+  <section id="papers">
+    <div class="wrap">
+      <h2>Peer-reviewed</h2>
+      <p class="sub">the Higher School of Oncology, measured by researchers</p>
+      <p class="note">I am not an author on these papers. I came up with the programme in 2015 and ran its first intakes. Other people later studied it and published the results.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="src">JCO Global Oncology · 2021</span>
+          <h3>Educational collaboration between Russian-born US physicians and Russian oncology trainees in evidence-based medicine: the Higher School of Oncology</h3>
+          <div class="nums">
+            <div><b>68 → 111</b><span>Fresno test, median</span></div>
+            <div><b>71–78 vs 15–22</b><span>patient communication, vs non-participants</span></div>
+            <div><b>250–830</b><span>applicants a year</span></div>
+          </div>
+          <p class="cite">Baron E, Sittig M, Kotov M, Fomintsev I, Gushchin V. <em>JCO Global Oncology</em>, 2021;7:353-360. <a href="https://ascopubs.org/doi/10.1200/GO.20.00546" target="_blank" rel="noopener">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33667114/" target="_blank" rel="noopener">PubMed</a></p>
+          <a class="go" href="cases/higher-school-of-oncology.html">How it started →</a>
+        </article>
+        <article class="card">
+          <span class="src">Journal of Clinical Oncology · ASCO 2025</span>
+          <h3>Higher School of Oncology: a decade of advancing oncology training in resource-limited settings</h3>
+          <p>A conference abstract rather than a full paper. What matters is the date: a programme that started as a $3,000 competition is still running and still being written up for ASCO ten years later.</p>
+          <p class="cite"><em>Journal of Clinical Oncology</em>, 2025;43(16_suppl):e21028. <a href="https://ascopubs.org/doi/10.1200/JCO.2025.43.16_suppl.e21028" target="_blank" rel="noopener">DOI</a></p>
+          <a class="go" href="cases/higher-school-of-oncology.html">Read the case →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="press">
+    <div class="wrap">
+      <h2>Press</h2>
+      <p class="sub">launches covered while they were happening</p>
+      <div class="cards">
+        <article class="card">
+          <span class="src">RBC Trends <span class="lang">RU</span> · 2 April 2020</span>
+          <h3>A free COVID-19 help service, launched in a week and a half</h3>
+          <p>National business press on the helpline a cancer foundation launched in the first weeks of the pandemic. I am quoted as head of the help service.</p>
+          <p class="cite"><a href="https://trends.rbc.ru/trends/innovation/5e8355089a7947630ce2d632" target="_blank" rel="noopener">Read the article</a></p>
+          <a class="go" href="cases/defeatcovid.html">Read the case →</a>
+        </article>
+        <article class="card">
+          <span class="src">ITMO.News · 11 February 2019</span>
+          <h3>Prosto Sprosit: a cancer reference service launches in Russia</h3>
+          <p>Launch coverage with me quoted as head of the project: the first 300 donation-funded consultations went within a couple of days, then demand settled at around 30 questions a day.</p>
+          <p class="cite"><a href="https://news.itmo.ru/en/news/8238/" target="_blank" rel="noopener">Read the article</a></p>
+          <a class="go" href="cases/prosto-sprosit.html">Read the case →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="award">
+    <div class="wrap">
+      <h2>Award</h2>
+      <p class="sub">judged by the industry</p>
+      <div class="cards">
+        <article class="card wide">
+          <div class="txt">
+            <span class="src">Digital Health Awards · 2019</span>
+            <h3>Second place, Grand Prix category “Social Initiative of the Year”</h3>
+            <p>Awarded to Prosto Sprosit, the free written cancer consultation service, in its first year. The service paid for itself from donations from the first month.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap" aria-label="Prosto Sprosit illustrations"><img src="assets/img/prosto-sprosit/illus-form.png" width="352" height="384" alt="Illustration from Prosto Sprosit: a checklist on a tablet." loading="lazy" style="flex:none;width:76px;height:auto;background:#fff;border-radius:8px;object-fit:contain"><img src="assets/img/prosto-sprosit/illus-doctor.png" width="352" height="384" alt="Illustration from Prosto Sprosit: a doctor at a laptop." loading="lazy" style="flex:none;width:76px;height:auto;background:#fff;border-radius:8px;object-fit:contain"><img src="assets/img/prosto-sprosit/illus-answer.png" width="352" height="384" alt="Illustration from Prosto Sprosit: a woman reading a reply on her phone." loading="lazy" style="flex:none;width:76px;height:auto;background:#fff;border-radius:8px;object-fit:contain"></div>
+            <a class="go" href="cases/prosto-sprosit.html">Read the case →</a>
+          </div>
+          <img src="assets/img/prosto-sprosit/digital-health-awards-2019.jpg" width="1280" height="960" alt="Alex holding the Digital Health Awards 2019 diploma for Prosto Sprosit" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reference">
+    <div class="wrap">
+      <h2>Reference</h2>
+      <p class="sub">written up by people who had never heard of me</p>
+      <div class="cards">
+        <article class="card">
+          <span class="src">Wikipedia</span>
+          <h3>Cancer Prevention Foundation</h3>
+          <p>Two products I built are described in the article, each with its own sources: SCREEN, an online cancer risk test (2016, version 2.0 in 2018), and the Higher School of Oncology (2015). I am not named in it, and I did not edit it.</p>
+          <p class="cite"><a href="https://en.wikipedia.org/wiki/Cancer_Prevention_Foundation" target="_blank" rel="noopener">Read the article</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="wrap">
+      <h2>Recognition</h2>
+      <p class="sub">by nomination: you cannot apply to IVLP, the U.S. Embassy picks participants</p>
+      <div class="cards">
+        <article class="card wide">
+          <div class="txt">
+            <span class="src">U.S. Department of State · December 2019</span>
+            <h3>International Visitor Leadership Program</h3>
+            <p>Nominated by the U.S. Embassy and selected for a fully funded State Department exchange for nonprofit leaders from Russia. Meetings with American nonprofits and foundations, including cancer support organisations, in Washington, D.C., San Francisco, Houston and New York.</p>
+            <p class="cite">The U.S. government's foundational professional exchange: more than 230,000 participants since 1940, over 500 of whom went on to become heads of state or government. <a href="https://exchanges.state.gov/non-us/program/international-visitor-leadership-program-ivlp" target="_blank" rel="noopener">About IVLP</a></p>
+          </div>
+          <div class="pics">
+            <img src="assets/img/ivlp/ivlp-meeting.jpg" width="540" height="540" alt="Alex at a programme meeting in Washington, behind a name card reading Mr. Aleksandr Borunov, Russia" loading="lazy">
+            <img src="assets/img/ivlp/ivlp-capitol.jpg" width="720" height="540" alt="Alex on a rooftop in Washington, D.C., with the Capitol behind him" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="big">Hiring for growth or 0 to 1? Let's talk.</div>
+    <a class="btn" href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <div class="small"><span>Alex Borunov</span><a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a><a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a><a href="Alex_Borunov_CV.pdf">CV (PDF)</a><a href="cases.html">Cases</a></div>
+  </div>
+</footer>
+</body>
+</html>

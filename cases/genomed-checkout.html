@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Built from cases/_template.html. Sources for every figure are listed at the bottom of the page. -->
+
+<title>Why split a checkout into more steps? · Alex Borunov</title>
+<meta name="description" content="Genomed checkout: from 20 questions on one screen to three short single-column steps.">
+<meta property="og:title" content="Why split a checkout into more steps? · Alex Borunov">
+<meta property="og:description" content="The step count was not the point. What was on each screen was.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alexborunov.com/cases/genomed-checkout.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/genomed-checkout.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Why split a checkout into more steps?">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/avatar-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sitebar">
+  <nav class="sitenav" aria-label="Main">
+    <a class="brand plate" href="../index.html"><img class="ava" src="../assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="../index.html">Home</a>
+      <a href="../cases.html" aria-current="page">Cases</a>
+      <a href="../proof.html">Proof</a>
+      <a href="../alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="../Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <header class="case-hero">
+    <div class="read">
+      <span class="kicker"><span class="dot"></span> Conversion · E-commerce</span>
+      <h1>Why split a checkout into more steps?</h1>
+      <p class="dek">Genomed's checkout asked about 20 questions on one screen. We rebuilt it as short single-column steps, and conversion to payment rose by almost half. The number of steps was not the point.</p>
+      <div class="case-meta">
+        <span>Genomed</span>
+        <span>·</span>
+        <span>2022 to 2024</span>
+        <span>·</span>
+        <span data-reading-time></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="case-layout">
+    <div class="read">
+
+      <div class="factbox">
+        <dl>
+          <div><dt>My role</dt><dd>Senior Product Manager, owner of the web channel</dd></div>
+          <div><dt>Company</dt><dd>Genomed, the largest genetic testing lab in the CIS, selling tests online</dd></div>
+          <div><dt>Context</dt><dd>From December 2022 to December 2024 the site's monthly revenue grew 4x. This is one release inside that.</dd></div>
+          <div><dt>The constraint</dt><dd>No budget at all: no ads, no SEO agency, no paid tools. Almost every visitor came from organic search, so conversion was the lever we had.</dd></div>
+        </dl>
+      </div>
+
+      <div class="tldr">
+        <h2>If you only read one thing</h2>
+        <p>Checkout was one long page with about 20 questions crammed into columns. In June 2023 we shipped it as short single-column steps with clinical questions only where the test needed them. <strong>Conversion to payment rose 45%: roughly $45–50K a month more through the web channel.</strong></p>
+      </div>
+
+      <article class="prose">
+
+        <h2 id="situation" data-short="The situation">The situation</h2>
+
+        <p>Checkout was one long page: about 20 questions shown at once, none of them depending on which test you bought, laid out in several columns so the whole form would fit on one screen. Many people started checkout; few paid.</p>
+
+        <h2 id="fork" data-short="The fork">The fork</h2>
+
+        <div class="fork">
+          <div class="fork-options">
+            <div class="opt">
+              <span class="opt-label">Option A</span>
+              <h4>Keep one page, make it better</h4>
+              <p>Shorter, one column. Fewer clicks, and the conventional advice says fewer steps convert better.</p>
+            </div>
+            <div class="opt" data-chosen>
+              <span class="opt-label">Option B · chosen</span>
+              <h4>Three steps</h4>
+              <p>A few fields per screen, one column, and clinical questions that appear only when the test needs them.</p>
+            </div>
+          </div>
+          <div class="fork-verdict">
+            <p>Baymard Institute's checkout research says the number of steps matters less than what the customer has to do on each one: how many fields, and how they are laid out. Multi-column forms in particular perform worse. Steps were the simplest way to keep every screen short and single-column. They also did two things one page could not: the clinical questions depend on the test, so they only make sense once the cart is settled, and the contact details come in before anyone reaches payment.</p>
+          </div>
+        </div>
+
+        <h2 id="shipped" data-short="What shipped">What shipped</h2>
+
+        <p>It shipped in June 2023 as one release, the new price page: step-by-step checkout, new cart logic and a proper mobile layout. Step one: contact details. Step two: clinical information, with questions depending on the chosen test. Step three: payment.</p>
+
+        <figure>
+          <svg viewBox="0 0 680 380" role="img" aria-label="Schematic of the checkout before and after. Before: one page with about 20 fields in three columns and a single Pay button. After: three narrow single-column steps: contacts with three fields, clinical questions with four fields of which two appear only if the test needs them, and payment." style="background:var(--bg-1)">
+<style>.panel{fill:var(--bg);stroke:var(--line-2)}.f{fill:var(--bg-2);stroke:var(--line-3)}.lab{fill:var(--ink-4)}.btn{fill:var(--sig)}.bt{font:600 11px var(--font);fill:#0B0B12;text-anchor:middle}.h{font:600 13px var(--font);fill:var(--ink)}.s{font:500 11px var(--mono);fill:var(--ink-2)}.c{font:400 11px var(--mono);fill:var(--ink-4)}</style>
+<text x="20" y="26" class="h">Before: one page</text>
+<rect x="20" y="40" width="300" height="300" rx="4" class="panel"/>
+<rect x="34" y="56" width="50" height="5" class="lab"/>
+<rect x="34" y="65" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="56" width="50" height="5" class="lab"/>
+<rect x="126" y="65" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="56" width="53" height="5" class="lab"/>
+<rect x="218" y="65" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="90" width="50" height="5" class="lab"/>
+<rect x="34" y="99" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="90" width="50" height="5" class="lab"/>
+<rect x="126" y="99" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="90" width="53" height="5" class="lab"/>
+<rect x="218" y="99" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="124" width="50" height="5" class="lab"/>
+<rect x="34" y="133" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="124" width="50" height="5" class="lab"/>
+<rect x="126" y="133" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="124" width="53" height="5" class="lab"/>
+<rect x="218" y="133" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="158" width="50" height="5" class="lab"/>
+<rect x="34" y="167" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="158" width="50" height="5" class="lab"/>
+<rect x="126" y="167" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="158" width="53" height="5" class="lab"/>
+<rect x="218" y="167" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="192" width="50" height="5" class="lab"/>
+<rect x="34" y="201" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="192" width="50" height="5" class="lab"/>
+<rect x="126" y="201" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="192" width="53" height="5" class="lab"/>
+<rect x="218" y="201" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="226" width="50" height="5" class="lab"/>
+<rect x="34" y="235" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="226" width="50" height="5" class="lab"/>
+<rect x="126" y="235" width="84" height="14" rx="2" class="f"/>
+<rect x="218" y="226" width="53" height="5" class="lab"/>
+<rect x="218" y="235" width="88" height="14" rx="2" class="f"/>
+<rect x="34" y="260" width="50" height="5" class="lab"/>
+<rect x="34" y="269" width="84" height="14" rx="2" class="f"/>
+<rect x="126" y="260" width="50" height="5" class="lab"/>
+<rect x="126" y="269" width="84" height="14" rx="2" class="f"/>
+<rect x="34" y="304" width="272" height="22" rx="3" class="btn"/>
+<text x="170" y="319" class="bt">Pay</text>
+<text x="20" y="364" class="c">~20 fields, 3 columns, all at once</text>
+<text x="360" y="26" class="h">After: three steps</text>
+<rect x="360" y="40" width="94" height="300" rx="4" class="panel"/>
+<text x="370" y="60" class="s">1  Contacts</text>
+<rect x="370" y="76" width="44" height="5" class="lab"/>
+<rect x="370" y="85" width="74" height="14" rx="2" class="f"/>
+<rect x="370" y="116" width="44" height="5" class="lab"/>
+<rect x="370" y="125" width="74" height="14" rx="2" class="f"/>
+<rect x="370" y="156" width="44" height="5" class="lab"/>
+<rect x="370" y="165" width="74" height="14" rx="2" class="f"/>
+<rect x="370" y="304" width="74" height="22" rx="3" class="btn"/>
+<text x="407" y="319" class="bt">Next</text>
+<rect x="464" y="40" width="94" height="300" rx="4" class="panel"/>
+<text x="474" y="60" class="s">2  Clinical</text>
+<rect x="474" y="76" width="44" height="5" class="lab"/>
+<rect x="474" y="85" width="74" height="14" rx="2" class="f"/>
+<rect x="474" y="116" width="44" height="5" class="lab"/>
+<rect x="474" y="125" width="74" height="14" rx="2" class="f"/>
+<rect x="474" y="156" width="44" height="5" class="lab"/>
+<rect x="474" y="165" width="74" height="14" rx="2" class="f" stroke-dasharray="4 3"/>
+<rect x="474" y="196" width="44" height="5" class="lab"/>
+<rect x="474" y="205" width="74" height="14" rx="2" class="f" stroke-dasharray="4 3"/>
+<rect x="474" y="304" width="74" height="22" rx="3" class="btn"/>
+<text x="511" y="319" class="bt">Next</text>
+<rect x="568" y="40" width="94" height="300" rx="4" class="panel"/>
+<text x="578" y="60" class="s">3  Payment</text>
+<rect x="578" y="76" width="74" height="40" rx="3" class="f"/>
+<rect x="578" y="304" width="74" height="22" rx="3" class="btn"/>
+<text x="615" y="319" class="bt">Pay</text>
+<text x="360" y="364" class="c">One column; dashed = only if the test needs it</text>
+</svg>
+          <figcaption>Reconstruction, not a screenshot: the original form no longer exists, and the live one has been redesigned since.</figcaption>
+        </figure>
+
+        <h2 id="results" data-short="What happened">What happened</h2>
+
+        <div class="grid-cells">
+          <div class="cell"><b>~$45–50K</b><span>a month more through the web channel</span></div>
+          <div class="cell"><b>+45%</b><span>conversion to payment, May vs July 2023</span></div>
+        </div>
+
+        <figure class="chart-fig">
+          <div class="chart">
+            <div class="chart-head">
+              <p class="chart-title">Visitors fell. Checkout revenue grew.
+                <span class="chart-sub">index, May 2023 = 100 · revenue through the site's checkout vs new visitors · 2023</span></p>
+            </div>
+<svg viewBox="0 0 680 320" role="img" aria-labelledby="sc-t sc-d" style="width:100%;height:auto;display:block">
+<title id="sc-t">Checkout revenue against new visitors, 2023, indexed to May = 100</title>
+<desc id="sc-d">After the June release, visitors fell about 9% while checkout revenue rose about 20%. By December revenue stood at 136 and visitors at 101.</desc>
+<style>.g{stroke:var(--line-2);stroke-width:1}.g0{stroke:var(--line-3);stroke-width:1}.ax{font:500 11px var(--mono);fill:var(--ink-3)}.rv{fill:none;stroke:var(--sig);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}.vs{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:5 4;stroke-linejoin:round}.dr{fill:var(--sig)}.dv{fill:var(--ink-2)}.lb{font:600 12px var(--font);fill:var(--ink)}.lb2{font:500 11px var(--mono);fill:var(--ink-2)}.rel{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:2 3}.gap{fill:var(--sig);opacity:.12}.hit{fill:transparent;cursor:default}.hit:focus{outline:none;fill:rgba(255,255,255,.04)}@media (max-width:600px){.ax{font-size:16px}.lb{font-size:16px}.lb2{font-size:14px}.rv{stroke-width:4}.vs{stroke-width:3}}</style>
+<line class="g" x1="44" x2="588" y1="280.0" y2="280.0"/><text class="ax" x="36" y="284.0" text-anchor="end">60</text>
+<line class="g" x1="44" x2="588" y1="222.2" y2="222.2"/><text class="ax" x="36" y="226.2" text-anchor="end">80</text>
+<line class="g0" x1="44" x2="588" y1="164.4" y2="164.4"/><text class="ax" x="36" y="168.4" text-anchor="end">100</text>
+<line class="g" x1="44" x2="588" y1="106.7" y2="106.7"/><text class="ax" x="36" y="110.7" text-anchor="end">120</text>
+<line class="g" x1="44" x2="588" y1="48.9" y2="48.9"/><text class="ax" x="36" y="52.9" text-anchor="end">140</text>
+<polygon class="gap" points="207.2,164.4 261.6,114.7 316.0,107.1 370.4,145.3 424.8,120.5 479.2,120.5 533.6,82.2 588.0,59.3 588.0,160.6 533.6,162.7 479.2,212.1 424.8,189.6 370.4,188.7 316.0,189.8 261.6,189.5 207.2,164.4"/>
+<line class="rel" x1="234.4" x2="234.4" y1="20" y2="280"/><text class="ax" x="240.4" y="30">release</text>
+<polyline class="vs" points="44.0,170.8 98.4,130.3 152.8,138.9 207.2,164.4 261.6,189.5 316.0,189.8 370.4,188.7 424.8,189.6 479.2,212.1 533.6,162.7 588.0,160.6"/>
+<polyline class="rv" points="44.0,250.4 98.4,170.1 152.8,177.8 207.2,164.4 261.6,114.7 316.0,107.1 370.4,145.3 424.8,120.5 479.2,120.5 533.6,82.2 588.0,59.3"/>
+<circle class="dr" cx="44.0" cy="250.4" r="3.5"/>
+<circle class="dv" cx="44.0" cy="170.8" r="3"/>
+<text class="ax" x="44.0" y="300" text-anchor="middle">Feb</text>
+<circle class="dr" cx="98.4" cy="170.1" r="3.5"/>
+<circle class="dv" cx="98.4" cy="130.3" r="3"/>
+<text class="ax" x="98.4" y="300" text-anchor="middle">Mar</text>
+<circle class="dr" cx="152.8" cy="177.8" r="3.5"/>
+<circle class="dv" cx="152.8" cy="138.9" r="3"/>
+<text class="ax" x="152.8" y="300" text-anchor="middle">Apr</text>
+<circle class="dr" cx="207.2" cy="164.4" r="3.5"/>
+<circle class="dv" cx="207.2" cy="164.4" r="3"/>
+<text class="ax" x="207.2" y="300" text-anchor="middle">May</text>
+<circle class="dr" cx="261.6" cy="114.7" r="3.5"/>
+<circle class="dv" cx="261.6" cy="189.5" r="3"/>
+<text class="ax" x="261.6" y="300" text-anchor="middle">Jun</text>
+<circle class="dr" cx="316.0" cy="107.1" r="3.5"/>
+<circle class="dv" cx="316.0" cy="189.8" r="3"/>
+<text class="ax" x="316.0" y="300" text-anchor="middle">Jul</text>
+<circle class="dr" cx="370.4" cy="145.3" r="3.5"/>
+<circle class="dv" cx="370.4" cy="188.7" r="3"/>
+<text class="ax" x="370.4" y="300" text-anchor="middle">Aug</text>
+<circle class="dr" cx="424.8" cy="120.5" r="3.5"/>
+<circle class="dv" cx="424.8" cy="189.6" r="3"/>
+<text class="ax" x="424.8" y="300" text-anchor="middle">Sep</text>
+<circle class="dr" cx="479.2" cy="120.5" r="3.5"/>
+<circle class="dv" cx="479.2" cy="212.1" r="3"/>
+<text class="ax" x="479.2" y="300" text-anchor="middle">Oct</text>
+<circle class="dr" cx="533.6" cy="82.2" r="3.5"/>
+<circle class="dv" cx="533.6" cy="162.7" r="3"/>
+<text class="ax" x="533.6" y="300" text-anchor="middle">Nov</text>
+<circle class="dr" cx="588.0" cy="59.3" r="3.5"/>
+<circle class="dv" cx="588.0" cy="160.6" r="3"/>
+<text class="ax" x="588.0" y="300" text-anchor="middle">Dec</text>
+<text class="lb" x="598" y="63.3">Revenue</text><text class="lb2" x="598" y="77.3">136</text>
+<text class="lb" x="598" y="164.6">Visitors</text><text class="lb2" x="598" y="178.6">101</text>
+<rect class="hit" x="16.8" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 70 · Visitors 98" data-tip-label="Feb 2023 · $106K · 475 paid orders · 146K visitors"/>
+<rect class="hit" x="71.2" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 98 · Visitors 112" data-tip-label="Mar 2023 · $148K · 584 paid orders · 167K visitors"/>
+<rect class="hit" x="125.6" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 95 · Visitors 109" data-tip-label="Apr 2023 · $144K · 588 paid orders · 163K visitors"/>
+<rect class="hit" x="180.0" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 100 · Visitors 100" data-tip-label="May 2023 · $151K · 564 paid orders · 149K visitors"/>
+<rect class="hit" x="234.4" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 117 · Visitors 91" data-tip-label="Jun 2023 · $177K · 701 paid orders · 136K visitors"/>
+<rect class="hit" x="288.8" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 120 · Visitors 91" data-tip-label="Jul 2023 · $181K · 747 paid orders · 136K visitors"/>
+<rect class="hit" x="343.2" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 107 · Visitors 92" data-tip-label="Aug 2023 · $161K · 664 paid orders · 137K visitors"/>
+<rect class="hit" x="397.6" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 115 · Visitors 91" data-tip-label="Sep 2023 · $174K · 731 paid orders · 136K visitors"/>
+<rect class="hit" x="452.0" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 115 · Visitors 84" data-tip-label="Oct 2023 · $174K · 782 paid orders · 125K visitors"/>
+<rect class="hit" x="506.4" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 128 · Visitors 101" data-tip-label="Nov 2023 · $194K · 776 paid orders · 150K visitors"/>
+<rect class="hit" x="560.8" y="20" width="54.4" height="260" tabindex="0" data-tip-value="Revenue 136 · Visitors 101" data-tip-label="Dec 2023 · $206K · 908 paid orders · 151K visitors"/>
+</svg>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption>Same data as a table</caption>
+              <thead><tr><th>Month</th><th>Paid orders</th><th>Revenue, $</th><th>New visitors</th></tr></thead>
+              <tbody>
+<tr><td>Feb 2023</td><td>475</td><td>$106K</td><td>146K</td></tr>
+<tr><td>Mar 2023</td><td>584</td><td>$148K</td><td>167K</td></tr>
+<tr><td>Apr 2023</td><td>588</td><td>$144K</td><td>163K</td></tr>
+<tr><td>May 2023</td><td>564</td><td>$151K</td><td>149K</td></tr>
+<tr><td>Jun 2023</td><td>701</td><td>$177K</td><td>136K</td></tr>
+<tr><td>Jul 2023</td><td>747</td><td>$181K</td><td>136K</td></tr>
+<tr><td>Aug 2023</td><td>664</td><td>$161K</td><td>137K</td></tr>
+<tr><td>Sep 2023</td><td>731</td><td>$174K</td><td>136K</td></tr>
+<tr><td>Oct 2023</td><td>782</td><td>$174K</td><td>125K</td></tr>
+<tr><td>Nov 2023</td><td>776</td><td>$194K</td><td>150K</td></tr>
+<tr><td>Dec 2023</td><td>908</td><td>$206K</td><td>151K</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figcaption>From my monthly tracking at Genomed. After the June release, new visitors dropped about 9% and stayed lower all autumn, while revenue through the checkout rose about 20% by July. The growth came from converting more of the people who were already arriving, not from more of them.</figcaption>
+        </figure>
+
+        <p>How the money is counted: had conversion stayed at May's level, June and July would have brought about 420 fewer paid orders. At an average order of about $230, that is roughly $95–100K over the two months, or $45–50K a month at mid-2023 exchange rates.</p>
+        <p>There was no paid traffic at all, so no campaign changed who was arriving at the site between these months.</p>
+        <p>This is a release, not an experiment: the steps, the cart logic and the mobile layout went out together, so the jump belongs to all of them. Doctor booking launched in August and SEO work in October, so the later months are not clean comparisons. May against July is.</p>
+
+        <h3>The second pass</h3>
+
+        <p>In October 2023 I went through the form again, field by field. Name, surname and patronymic became one field. Date of birth, sex, "ordering for someone else", diagnosis and a duplicated promo code field went. The discount column only appears once a promo code is applied. With that few fields left, the first two steps fitted on one screen, so the spec merged them. Which is what Baymard would predict: steps were never the point, the fields were.</p>
+
+        <figure class="shot">
+          <img width="1259" height="818" src="../assets/img/genomed/cart-fields-cut.png" alt="Patient data step of the Genomed checkout with fields crossed out in red: patronymic, date of birth, sex, 'ordering for another person' and promo code. Surname and name are outlined in green to merge into one field labelled 'How should we address you?'." loading="lazy">
+          <figcaption>From my spec, October 2023. Red: fields removed. Green: surname and name merged into one field.</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img width="1721" height="549" src="../assets/img/genomed/cart-discount-cut.png" alt="Cart table with the Discount column and the Discount amount row crossed out in red." loading="lazy">
+          <figcaption>Discount column and row hidden until a promo code is applied.</figcaption>
+        </figure>
+
+        <h3>What did not ship</h3>
+
+        <p>I wanted to go one step further: move the clinical questions after payment and make them optional. The clinic took the patient's history again at sample collection anyway, so asking for it before payment only put more fields between the patient and the Pay button. In my mockup they became a fourth step, "Details", with one reason to fill them in: the contract would be ready in advance, which saves time at the clinic.</p>
+        <p>It did not get through. The clinical intake had worked the same way for many years, and changing it was a much bigger ask than changing a form. I still think it was the next big step for conversion, but it never ran, so it stays a hypothesis.</p>
+
+        <figure class="shot">
+          <img width="752" height="492" src="../assets/img/genomed/checkout-details-after-payment.jpg" alt="Mockup of the Genomed checkout at step 4 of 4, Details, after Cart, Patient data and Payment are complete. Optional fields: date of birth, sex, diagnosis and a comment, with the line 'Tell us more about the patient to get the contract form in advance'." loading="lazy">
+          <figcaption>My mockup: clinical details as the last step, after payment and optional. Not shipped.</figcaption>
+        </figure>
+
+        <h2 id="sources" data-short="Sources">Sources</h2>
+
+        <ul class="sources">
+          <li><a href="https://baymard.com/blog/one-page-checkout" target="_blank" rel="noopener">Baymard Institute: One Page Checkouts</a></li>
+          <li><a href="https://baymard.com/blog/avoid-multi-column-forms" target="_blank" rel="noopener">Baymard Institute: Avoid Extensive Multicolumn Layouts</a></li>
+        </ul>
+        <p class="fx-note" style="font-size:13.5px;color:var(--ink-3);margin-top:18px">All money on this page is in US dollars, converted from roubles. Monthly figures in the chart and table use one fixed rate, 79 ₽ per dollar (Bank of Russia average for May 2023), so the currency’s fall later that year doesn’t distort the trend. The monthly totals in the text use the rates of the months the money came in.</p>
+
+      </article>
+
+      <div class="takeaway">
+        <h2>The takeaway</h2>
+        <p>Count what is on the screen, not the steps. A longer path can be the easier one if every screen asks less.</p>
+      </div>
+
+      <div class="pill-row" style="margin-top:28px">
+        <button class="copybtn">Copy link to this case</button>
+        <a class="pill" href="../cases.html">All cases</a>
+      </div>
+
+      <nav class="case-nav">
+        <a href="white-label.html">
+          <span class="dir">Previous</span>
+          <span class="ttl">How did one database flag become a second product?</span>
+        </a>
+        <a class="next" href="genomed-abandoned.html">
+          <span class="dir">Next</span>
+          <span class="ttl">What do you do with people who leave the checkout?</span>
+        </a>
+      </nav>
+
+    </div><!-- /.read -->
+
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol><!-- built by site.js from .prose h2[id] --></ol>
+    </aside>
+  </div><!-- /.case-layout -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <span>Alex Borunov</span>
+    <span class="sep">·</span>
+    <a href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

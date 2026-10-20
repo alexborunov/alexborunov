@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Built from cases/_template.html. Sources for every figure are listed at the bottom of the page. -->
+
+<title>Why did a landing page need ten people? · Alex Borunov</title>
+<meta name="description" content="Genomed: replacing ten-person landing page meetings with a template engine of shared blocks. A new landing in one or two days.">
+<meta property="og:title" content="Why did a landing page need ten people? · Alex Borunov">
+<meta property="og:description" content="If every page needs a meeting, the problem is not the meeting.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alexborunov.com/cases/genomed-landings.html">
+<meta property="og:site_name" content="Alex Borunov">
+<meta property="og:image" content="https://alexborunov.com/assets/og/genomed-landings.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Why did a landing page need ten people?">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/avatar-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sitebar">
+  <nav class="sitenav" aria-label="Main">
+    <a class="brand plate" href="../index.html"><img class="ava" src="../assets/avatar.svg" width="24" height="24" alt="">Alex Borunov</a>
+    <div class="links plate">
+      <a href="../index.html">Home</a>
+      <a href="../cases.html" aria-current="page">Cases</a>
+      <a href="../proof.html">Proof</a>
+      <a href="../alexgpt.html">AlexGPT</a>
+    </div>
+    <a class="cv" href="../Alex_Borunov_CV.pdf">CV <span aria-hidden="true">↓</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <header class="case-hero">
+    <div class="read">
+      <span class="kicker"><span class="dot"></span> Process · Web</span>
+      <h1>Why did a landing page need ten people?</h1>
+      <p class="dek">At Genomed every new landing page started with a call of about ten people arguing over headlines and button colours. I built a template engine of shared blocks, and from then on I made a landing page alone in one or two days: images, copy and HTML.</p>
+      <div class="case-meta">
+        <span>Genomed</span>
+        <span>·</span>
+        <span>2022 to 2024</span>
+        <span>·</span>
+        <span data-reading-time></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="case-layout">
+    <div class="read">
+
+      <div class="factbox">
+        <dl>
+          <div><dt>My role</dt><dd>Senior Product Manager, owner of the web channel</dd></div>
+          <div><dt>Company</dt><dd>Genomed, the largest genetic testing lab in the CIS, selling tests online</dd></div>
+          <div><dt>Stack</dt><dd>MODX CMS, shared blocks, HTML</dd></div>
+          <div><dt>The constraint</dt><dd>Hundreds of tests, each worth a page, and every page treated as a project.</dd></div>
+        </dl>
+      </div>
+
+      <div class="tldr">
+        <h2>If you only read one thing</h2>
+        <p>A landing page used to go through a ten-person call, mockups, sign-offs and a development cycle. I replaced that with shared blocks in the CMS that I could assemble on my own. <strong>A new landing page now took one or two days instead of weeks, and a block that won an A/B test went live on every landing at once.</strong></p>
+      </div>
+
+      <article class="prose">
+
+        <h2 id="situation" data-short="The situation">The situation</h2>
+
+        <p>When I joined, a new landing page for a test was a project. The first call brought together about ten people: the owner, heads of departments, a developer, a project manager, doctors, the person in charge of processes, a designer and QA. Most of the time went on headlines and button colours. Then came desktop and mobile mockups, sign-offs, front-end, back-end, testing.</p>
+        <p>Genomed sells hundreds of tests. At that speed only a few of them would ever get a proper page, and every page was built differently.</p>
+
+        <h2 id="fork" data-short="The fork">The fork</h2>
+
+        <div class="fork">
+          <div class="fork-options">
+            <div class="opt">
+              <span class="opt-label">Option A</span>
+              <h4>Make the process faster</h4>
+              <p>Fewer people on the call, tighter agendas, more developer time. Still a project per page, just a shorter one.</p>
+            </div>
+            <div class="opt" data-chosen>
+              <span class="opt-label">Option B · chosen</span>
+              <h4>Take pages out of the project process</h4>
+              <p>Build the page once, as shared blocks, and let a product manager assemble new pages without designers, developers or calls.</p>
+            </div>
+          </div>
+          <div class="fork-verdict">
+            <p>The meetings were not slow because people were bad at meetings. They were slow because every page was designed from scratch, so everyone had an opinion on everything. Standard blocks removed most of the questions the call existed to answer.</p>
+          </div>
+        </div>
+
+        <h2 id="shipped" data-short="What shipped">What shipped</h2>
+
+        <p>A template engine in MODX built from shared, standardised blocks, with prices and turnaround times pulled in dynamically. Knowing only HTML, I could put together a landing page for any test on my own, either from an incoming request or because I saw demand for a test in search data. I made the images in Photoshop, wrote the copy and did the markup myself.</p>
+        <p>Because the blocks were shared, improvements compounded. When a variant of a block won an A/B test on one page, it went live on every landing page built on the engine.</p>
+
+        <figure>
+          <svg viewBox="0 0 680 290" role="img" aria-label="Process diagram. Before: a call with about ten roles, requirements, desktop mockup, mobile mockup, sign-off, front-end, back-end, QA, release; all steps except requirements and release are struck through. After: demand or a request, assemble from shared blocks by the product manager alone, release, in one to two days. A block that wins an A/B test on one landing is rolled out to every landing." style="background:var(--bg-1)">
+<style>.cut{fill:var(--bg);stroke:var(--line-3);stroke-dasharray:4 3}.cutt{fill:var(--ink-4)}.keep{fill:var(--bg-2);stroke:var(--line-3)}.keept{fill:var(--ink-2)}.new{fill:var(--sig-bg);stroke:var(--sig)}.newt{fill:var(--ink)}.t{font:500 10.5px var(--font);text-anchor:middle}.strike{stroke:var(--ink-3);stroke-width:1.2}.ar{stroke:var(--ink-4);stroke-width:1}.ah{fill:var(--ink-4)}.h{font:600 13px var(--font);fill:var(--ink)}.c{font:400 11px var(--mono);fill:var(--ink-4)}.big{font:600 15px var(--mono);fill:var(--sig)}</style>
+<defs><marker id="h" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="ah"/></marker></defs>
+<text x="16" y="24" class="h">Before: every landing page as a project</text>
+<rect x="16" y="38" width="66" height="40" rx="4" class="cut"/><text x="49.0" y="55" class="t cutt">Call with</text><text x="49.0" y="68" class="t cutt">~10 roles</text><line x1="22" y1="58" x2="76" y2="58" class="strike"/>
+<line x1="82" y1="58" x2="86" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="90" y="38" width="66" height="40" rx="4" class="keep"/><text x="123.0" y="62" class="t keept">Brief</text>
+<line x1="156" y1="58" x2="160" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="164" y="38" width="66" height="40" rx="4" class="cut"/><text x="197.0" y="55" class="t cutt">Desktop</text><text x="197.0" y="68" class="t cutt">mockup</text><line x1="170" y1="58" x2="224" y2="58" class="strike"/>
+<line x1="230" y1="58" x2="234" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="238" y="38" width="66" height="40" rx="4" class="cut"/><text x="271.0" y="55" class="t cutt">Mobile</text><text x="271.0" y="68" class="t cutt">mockup</text><line x1="244" y1="58" x2="298" y2="58" class="strike"/>
+<line x1="304" y1="58" x2="308" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="312" y="38" width="66" height="40" rx="4" class="cut"/><text x="345.0" y="62" class="t cutt">Sign-off</text><line x1="318" y1="58" x2="372" y2="58" class="strike"/>
+<line x1="378" y1="58" x2="382" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="386" y="38" width="66" height="40" rx="4" class="cut"/><text x="419.0" y="62" class="t cutt">Front-end</text><line x1="392" y1="58" x2="446" y2="58" class="strike"/>
+<line x1="452" y1="58" x2="456" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="460" y="38" width="66" height="40" rx="4" class="cut"/><text x="493.0" y="62" class="t cutt">Back-end</text><line x1="466" y1="58" x2="520" y2="58" class="strike"/>
+<line x1="526" y1="58" x2="530" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="534" y="38" width="66" height="40" rx="4" class="cut"/><text x="567.0" y="62" class="t cutt">QA</text><line x1="540" y1="58" x2="594" y2="58" class="strike"/>
+<line x1="600" y1="58" x2="604" y2="58" class="ar" marker-end="url(#h)"/>
+<rect x="608" y="38" width="66" height="40" rx="4" class="keep"/><text x="641.0" y="62" class="t keept">Release</text>
+<text x="16" y="100" class="c">weeks per page, ten people on the first call, debates over button colours</text>
+<text x="16" y="140" class="h">After: a page assembled from shared blocks</text>
+<rect x="16" y="154" width="96" height="40" rx="4" class="keep"/><text x="64.0" y="171" class="t keept">Demand or</text><text x="64.0" y="184" class="t keept">a request</text>
+<line x1="112" y1="174" x2="132" y2="174" class="ar" marker-end="url(#h)"/>
+<rect x="136" y="154" width="230" height="40" rx="4" class="new"/><text x="251.0" y="171" class="t newt">Images, copy, HTML from shared blocks</text><text x="251.0" y="184" class="t newt">all by me</text>
+<line x1="366" y1="174" x2="386" y2="174" class="ar" marker-end="url(#h)"/>
+<rect x="390" y="154" width="96" height="40" rx="4" class="keep"/><text x="438.0" y="178" class="t keept">Release</text>
+<text x="516" y="179" class="big">1–2 days</text>
+<rect x="16" y="214" width="230" height="40" rx="4" class="new"/><text x="131" y="231" class="t newt">A block wins an A/B test</text><text x="131" y="244" class="t newt">on one landing</text>
+<line x1="246" y1="234" x2="286" y2="234" class="ar" marker-end="url(#h)"/>
+<rect x="290" y="214" width="230" height="40" rx="4" class="new"/><text x="405" y="238" class="t newt">Rolled out to every landing</text>
+<text x="16" y="276" class="c">struck through: steps a new landing no longer went through</text>
+</svg>
+          <figcaption>What a new landing page no longer had to go through.</figcaption>
+        </figure>
+
+        <h2 id="results" data-short="What happened">What happened</h2>
+
+        <div class="grid-cells">
+          <div class="cell"><b>1–2 days</b><span>to assemble a new landing page, instead of weeks</span></div>
+          <div class="cell"><b>1</b><span>person instead of about ten</span></div>
+          <div class="cell"><b>~$0.5K → ~$5K</b><span>DNA ancestry revenue a month through the web channel</span></div>
+        </div>
+
+        <p>The DNA ancestry page is one example of what the engine made possible. I assembled it on the engine and promoted it through SEO, with no ad budget. In January to November 2024 it was one of the ten most visited pages on genomed.ru, with 57,000 visitors.</p>
+        <p>Before December 2023 ancestry tests brought the web channel about $500 a month. By the end of 2024 it was $4.5–5.5K a month, and over sixteen months the page earned about $31K above the old level, at monthly average exchange rates. Orders went from 0–6 a month to a peak of 39.</p>
+
+        <figure class="shot">
+          <img width="800" height="500" src="../assets/img/genomed/ancestry-landing.jpg" alt="Genomed DNA ancestry landing page: 'DNA test for ethnicity. Learn more about your origins', with buttons 'Choose a test' and 'Discounted bundles'." loading="lazy">
+          <figcaption>The DNA ancestry landing page, assembled from the shared blocks.</figcaption>
+        </figure>
+
+        <blockquote>
+          <p>The best review the page ever got did not come from analytics. A while later a competitor copied it almost one to one: the structure, the blocks, the copy.</p>
+          <cite>Nobody copies a landing page that does not sell.</cite>
+        </blockquote>
+
+        <figure class="chart-fig">
+          <div class="chart">
+            <div class="chart-head">
+              <p class="chart-title">DNA ancestry orders through the site's checkout
+                <span class="chart-sub">orders a month · December 2022 to March 2025</span></p>
+            </div>
+            <div class="plot" style="--max:40">
+              <div class="gl" style="bottom:0"><span>0</span></div>
+              <div class="gl" style="bottom:25%"><span>10</span></div>
+              <div class="gl" style="bottom:50%"><span>20</span></div>
+              <div class="gl" style="bottom:75%"><span>30</span></div>
+              <div class="gl" style="bottom:100%"><span>40</span></div>
+              <div class="groups">
+<div class="grp"><div class="bar" style="--v:1;width:12px" tabindex="0" data-tip-value="1 orders" data-tip-label="Dec 22"></div></div>
+<div class="grp"><div class="bar" style="--v:2;width:12px" tabindex="0" data-tip-value="2 orders" data-tip-label="Jan 23"></div></div>
+<div class="grp"><div class="bar" style="--v:0;width:12px" tabindex="0" data-tip-value="0 orders" data-tip-label="Feb"></div></div>
+<div class="grp"><div class="bar" style="--v:4;width:12px" tabindex="0" data-tip-value="4 orders" data-tip-label="Mar"></div></div>
+<div class="grp"><div class="bar" style="--v:3;width:12px" tabindex="0" data-tip-value="3 orders" data-tip-label="Apr"></div></div>
+<div class="grp"><div class="bar" style="--v:0;width:12px" tabindex="0" data-tip-value="0 orders" data-tip-label="May"></div></div>
+<div class="grp"><div class="bar" style="--v:3;width:12px" tabindex="0" data-tip-value="3 orders" data-tip-label="Jun"></div></div>
+<div class="grp"><div class="bar" style="--v:2;width:12px" tabindex="0" data-tip-value="2 orders" data-tip-label="Jul"></div></div>
+<div class="grp"><div class="bar" style="--v:6;width:12px" tabindex="0" data-tip-value="6 orders" data-tip-label="Aug"></div></div>
+<div class="grp"><div class="bar" style="--v:3;width:12px" tabindex="0" data-tip-value="3 orders" data-tip-label="Sep"></div></div>
+<div class="grp"><div class="bar" style="--v:3;width:12px" tabindex="0" data-tip-value="3 orders" data-tip-label="Oct"></div></div>
+<div class="grp"><div class="bar" style="--v:2;width:12px" tabindex="0" data-tip-value="2 orders" data-tip-label="Nov"></div></div>
+<div class="grp"><div class="bar" style="--v:19;width:12px" tabindex="0" data-tip-value="19 orders" data-tip-label="Dec 23"></div></div>
+<div class="grp"><div class="bar" style="--v:10;width:12px" tabindex="0" data-tip-value="10 orders" data-tip-label="Jan 24"></div></div>
+<div class="grp"><div class="bar" style="--v:5;width:12px" tabindex="0" data-tip-value="5 orders" data-tip-label="Feb"></div></div>
+<div class="grp"><div class="bar" style="--v:8;width:12px" tabindex="0" data-tip-value="8 orders" data-tip-label="Mar"></div></div>
+<div class="grp"><div class="bar" style="--v:2;width:12px" tabindex="0" data-tip-value="2 orders" data-tip-label="Apr"></div></div>
+<div class="grp"><div class="bar" style="--v:9;width:12px" tabindex="0" data-tip-value="9 orders" data-tip-label="May"></div></div>
+<div class="grp"><div class="bar" style="--v:5;width:12px" tabindex="0" data-tip-value="5 orders" data-tip-label="Jun"></div></div>
+<div class="grp"><div class="bar" style="--v:9;width:12px" tabindex="0" data-tip-value="9 orders" data-tip-label="Jul"></div></div>
+<div class="grp"><div class="bar" style="--v:11;width:12px" tabindex="0" data-tip-value="11 orders" data-tip-label="Aug"></div></div>
+<div class="grp"><div class="bar" style="--v:11;width:12px" tabindex="0" data-tip-value="11 orders" data-tip-label="Sep"></div></div>
+<div class="grp"><div class="bar" style="--v:13;width:12px" tabindex="0" data-tip-value="13 orders" data-tip-label="Oct"></div></div>
+<div class="grp"><div class="bar" style="--v:19;width:12px" tabindex="0" data-tip-value="19 orders" data-tip-label="Nov"></div></div>
+<div class="grp"><div class="bar" style="--v:39;width:12px" tabindex="0" data-tip-value="39 orders" data-tip-label="Dec 24"></div></div>
+<div class="grp"><div class="bar" style="--v:35;width:12px" tabindex="0" data-tip-value="35 orders" data-tip-label="Jan 25"></div></div>
+<div class="grp"><div class="bar" style="--v:24;width:12px" tabindex="0" data-tip-value="24 orders" data-tip-label="Feb"></div></div>
+<div class="grp"><div class="bar" style="--v:22;width:12px" tabindex="0" data-tip-value="22 orders" data-tip-label="Mar"></div></div>
+              </div>
+            </div>
+            <div class="xlab"><span style="width:auto">Dec 22</span><span style="width:auto">Jan 23</span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto">Dec 23</span><span style="width:auto">Jan 24</span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto"></span><span style="width:auto">Dec 24</span><span style="width:auto">Jan 25</span><span style="width:auto"></span><span style="width:auto"></span></div>
+          </div>
+          <figcaption>From my monthly sales tracking at Genomed. December peaks: the test is a popular New Year gift.</figcaption>
+        </figure>
+
+      </article>
+
+      <div class="takeaway">
+        <h2>The takeaway</h2>
+        <p>If every page needs a meeting, the problem is not the meeting. Standardise the parts people argue about, and the argument goes away with them.</p>
+      </div>
+
+      <div class="pill-row" style="margin-top:28px">
+        <button class="copybtn">Copy link to this case</button>
+        <a class="pill" href="../cases.html">All cases</a>
+      </div>
+
+      <nav class="case-nav">
+        <a href="genomed-journal.html">
+          <span class="dir">Previous</span>
+          <span class="ttl">How do scattered articles become a sales channel?</span>
+        </a>
+        <a class="next" href="higher-school-of-oncology.html">
+          <span class="dir">Next</span>
+          <span class="ttl">What can a $3,000 sponsorship do in oncology?</span>
+        </a>
+      </nav>
+
+    </div><!-- /.read -->
+
+    <aside class="toc">
+      <h2>On this page</h2>
+      <ol><!-- built by site.js from .prose h2[id] --></ol>
+    </aside>
+  </div><!-- /.case-layout -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <span>Alex Borunov</span>
+    <span class="sep">·</span>
+    <a href="mailto:alexborunov@gmail.com">alexborunov@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/alexborunov" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://t.me/alexborunov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
