@@ -6,6 +6,9 @@
       "name": "web",
       "public": true,
       "context": ".",
+      "build_commands": [
+        "mkdir -p node_modules/__static__ && cp -r index.html cases.html alexgpt.html proof.html assets cases robots.txt Alex_Borunov_CV.pdf node_modules/__static__/"
+      ],
       "run_command": ["node", "serve.js"],
       "health_path": "/"
     }
