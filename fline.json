@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "stack_paths": [],
+  "services": [
+    {
+      "name": "web",
+      "public": true,
+      "context": ".",
+      "run_command": ["node", "serve.js"],
+      "health_path": "/"
+    }
+  ]
+}
